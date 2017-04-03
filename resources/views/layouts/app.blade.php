@@ -19,6 +19,8 @@
             'csrfToken' => csrf_token(),
         ]) !!};
     </script>
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
 <!-- 导航 -->
@@ -64,7 +66,6 @@
         </div>
     </div>
 </footer>
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 </html>

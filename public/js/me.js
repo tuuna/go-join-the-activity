@@ -34,6 +34,7 @@ document.querySelector("#add-sponsor-btn").onclick=function(){
 document.querySelector("#cancle-addsponsor").onclick=function(){
     toggleHidden(document.querySelector('.add-sponsor-form'));
 }
+
 $(function(){
     changeTab();
 })
