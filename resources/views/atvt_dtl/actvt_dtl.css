@@ -1,0 +1,339 @@
+.my-head {
+  width: 100%;
+  height: 340px;
+  margin-bottom: 30px;
+  background-image: linear-gradient(-90deg, #4BC0FF 4%, #8EE6FF 28%, #FFF593 78%, #FFE865 100%);
+}
+.my-head .my-info {
+  height: 280px;
+  text-align: center;
+  padding: 30px 0;
+}
+.my-head .my-info .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  margin-bottom: 10px;
+}
+.my-head .my-info .my-id {
+  line-height: 28px;
+  font-size: 20px;
+  color: #4EA1E7;
+}
+.my-head .my-info .my-autograph {
+  line-height: 20px;
+  font-size: 14px;
+  color: #4EA1E7;
+}
+.my-head .my-tabbar {
+  width: 100%;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.24);
+  display: flex;
+}
+.my-head .my-tabbar .tab {
+  flex: 1;
+}
+.my-head .my-tabbar .tab .tab-title {
+  text-align: center;
+  font-family: 'PingFangSC-Regular';
+  font-size: 18px;
+  color: #4A4A4A;
+  line-height: 60px;
+  transition: .3s;
+}
+.my-head .my-tabbar .tab .tab-title span {
+  display: inline-block;
+  transform: translateY(1px);
+  margin-left: 20px;
+  font-family: Helvetica;
+  font-size: 24px;
+  color: #4A4A4A;
+  transition: .3s;
+}
+.my-head .my-tabbar .tab-active .tab-title, .my-head .my-tabbar .tab-active span {
+  color: #4EA1E7 !important;
+}
+.my-head .my-tabbar .tab:hover {
+  cursor: pointer;
+}
+.my-head .my-tabbar .tab:hover .tab-title, .my-head .my-tabbar .tab:hover span {
+  color: #4EA1E7;
+}
+.set-myinfo {
+  background: #FCFCFC;
+  box-shadow: 0 1px 3px 0 rgba(203, 203, 203, 0.5);
+  border-radius: 1px;
+  text-align: center;
+  width: 120px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 12px;
+  color: #4EA1E7;
+  margin-top: 29px;
+  transition: .3s;
+}
+.set-myinfo:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.7);
+}
+.set-myinfo:active {
+  box-shadow: inset 0 1px 3px 0 rgba(203, 203, 203, 0.5);
+}
+
+/*# sourceMappingURL=myhead.css.map */
+.activityDetail-main {
+  width: 1180px;
+  height: auto;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+.activityDetail-main .activity-top {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 49px;
+}
+.activityDetail-main .activity-top .activity-img {
+  width: 580px;
+  height: auto;
+  float: left;
+}
+.activityDetail-main .activity-top .activity-signup {
+  width: 600px;
+  float: left;
+  padding-left: 20px;
+}
+.activityDetail-main .activity-top .activity-signup .signup-title {
+  font-size: 28px;
+  line-height: 40px;
+  margin-bottom: 29px;
+}
+.activityDetail-main .activity-top .activity-signup .signup-p {
+  font-size: 16px;
+  margin-bottom: 29px;
+}
+.activityDetail-main .activity-top .activity-signup embed {
+  margin-right: 10px;
+}
+.activityDetail-main .activity-main .activity-kinds {
+  margin-bottom: 30px;
+}
+.activityDetail-main .activity-main .activity-kinds dt {
+  font-family: 'PingFangSC-Regular';
+  font-size: 18px;
+  color: #4EA1E7;
+  line-height: 26px;
+}
+.activityDetail-main .activity-main .activity-kinds .activity-kinds-content {
+  font-size: 14px;
+  color: #000000;
+  line-height: 26px;
+}
+.activityDetail-main .activity-main .activity-kinds .activity-kinds-content th, .activityDetail-main .activity-main .activity-kinds .activity-kinds-content tr, .activityDetail-main .activity-main .activity-kinds .activity-kinds-content td {
+  font-weight: normal;
+  text-align: left;
+}
+.activityDetail-main .activity-main .activity-kinds .activity-kinds-content .activity-tags {
+  overflow: hidden;
+  margin-top: 21px;
+  margin-bottom: 30px;
+}
+.activityDetail-main .activity-main .activity-kinds .activity-kinds-content .activity-tags li {
+  float: left;
+  margin-right: 20px;
+}
+.activityDetail-main .activity-main .activity-kinds .activity-kinds-content .activity-kind-btn-wrap {
+  overflow: hidden;
+  margin-top: 21px;
+  margin-bottom: 30px;
+}
+.activityDetail-main .activity-main .activity-kinds .activity-kinds-content .activity-kind-btn-wrap li {
+  float: left;
+  margin-right: 20px;
+}
+.activityDetail-main .activity-main .activity-kinds .activity-sponsors {
+  height: 152px;
+  overflow: hidden;
+  margin-top: 14px;
+}
+.activityDetail-main .activity-main .activity-kinds .activity-sponsors li {
+  width: 120px;
+  height: 152px;
+  float: left;
+  margin-right: 20px;
+}
+.activityDetail-main .activity-main .activity-kinds .activity-sponsors li a {
+  display: block;
+  width: 120px;
+  height: 120px;
+  border: 1px solid transparent;
+  box-sizing: content-box;
+  border-radius: 2px;
+  text-align: center;
+}
+.activityDetail-main .activity-main .activity-kinds .activity-sponsors li a img {
+  width: 120px;
+  height: 120px;
+}
+.activityDetail-main .activity-main .activity-kinds .activity-sponsors li a:hover {
+  border: 1px solid #D1D1D1;
+}
+.acticity-tag-btn {
+  display: block;
+  width: 80px;
+  height: 40px;
+  border: 0.6px dashed #4EA1E7;
+  font-size: 14px;
+  color: #4A4A4A;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 3px;
+}
+.activity-kind-btn {
+  display: block;
+  font-family: 'PingFangSC-Regular';
+  font-size: 14px;
+  color: #4A4A4A;
+  background: #FFFFFF;
+  border: 0.6px solid #4EA1E7;
+  width: 80px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 4px;
+}
+.share-btn {
+  display: block;
+  width: 140px;
+  height: 40px;
+  background: #FFFFFF;
+  border: 0.6px solid #4EC743;
+  box-shadow: 0px 1px 2px 0px #D1D1D1;
+  border-radius: 4px;
+  font-size: 14px;
+  text-indent: 46px;
+  line-height: 40px;
+  color: #4A4A4A;
+  background-color: #fff !important;
+}
+.share-to-wx {
+  background: url(../../img/wx.png) 14px center no-repeat;
+  border: 0.6px solid #4EC743;
+}
+.share-to-qq {
+  background: url(../../img/qqlogo.png) 14px center no-repeat;
+  border: .6px solid #4EA1E7;
+}
+.share-to-weibo {
+  background: url(../../img/weibologo.png) 14px center no-repeat;
+  border: .6px solid #D8261C;
+}
+.share-to-gplus {
+  background: url(../../img/G+.png) 14px center no-repeat;
+  border: .6px solid #D8261C;
+}
+.activity-share ul {
+  overflow: hidden;
+}
+.activity-share li {
+  float: left;
+  margin-right: 20px;
+}
+.signup-form {
+  width: 100%;
+  background: #fff;
+  padding: 40px;
+  margin-bottom: 40px;
+  display: none;
+}
+.signup-form .form-title {
+  font-family: PingFangSC-Regular;
+  font-size: 24px;
+  color: #4EA1E7;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+  text-align: center;
+}
+.signup-form .form-content {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 36px;
+}
+.signup-form .form-content .input-wrap:nth-child(1), .signup-form .form-content .input-wrap:nth-child(2) {
+  margin-bottom: 40px;
+}
+.signup-form .form-content .input-wrap:nth-child(1), .signup-form .form-content .input-wrap:nth-child(3) {
+  margin-right: 70px;
+}
+.signup-form .form-btns {
+  margin: 0 auto;
+  width: 910px;
+  display: flex;
+  margin-top: 40px;
+}
+.signup-form .form-btns .form-btn {
+  width: 440px;
+  height: 50px;
+}
+.signup-form .form-btns .form-btn:first-child {
+  margin-right: 30px;
+}
+
+/*# sourceMappingURL=style.css.map */
+.modal {
+  background: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: .3s linear;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  opacity: 0;
+  display: none;
+}
+.modal-window {
+  opacity: 0;
+  display: none;
+  width: 400px;
+  height: 450px;
+  background: #fff;
+  transition: .3s ease-out;
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  margin-left: -200px;
+}
+.modal-title {
+  height: 50px;
+  background: #4EA1E7;
+}
+.modal-title h1 {
+  font-size: 16px;
+  line-height: 50px;
+  text-align: center;
+  font-weight: normal;
+  color: #fff;
+}
+#modal-close {
+  display: block;
+  position: absolute;
+  line-height: 50px;
+  color: palevioletred;
+  font-size: 20px;
+  right: 10px;
+  top: 0px;
+}
+.modal-content {
+  width: 300px;
+  height: 300px;
+  margin: 50px auto;
+  border: 1px solid #ccc;
+}
+.wx-qrcode {
+  width: 300px;
+  height: 300px;
+}

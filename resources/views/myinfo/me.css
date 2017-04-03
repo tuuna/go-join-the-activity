@@ -1,0 +1,406 @@
+@charset "UTF-8";
+
+.input-wrap {
+  width: 530px !important;
+  margin-top: 30px;
+}
+.input-wrap input {
+  width: 410px !important;
+}
+.sponsor-intro {
+  width: 1120px !important;
+}
+.sponsor-intro textarea {
+  display: block;
+  width: 1000px;
+  height: 120px;
+  font-size: 18px;
+  font-family: 'PingFangSC-Regular';
+  font-size: 16px;
+  color: #000;
+  float: right;
+  background: #FFFFFF;
+  border: 0.6px solid #D1D1D1;
+  box-shadow: 0px 1px 1px 0px #D1D1D1;
+  border-radius: 3px;
+  transition: .3s ease;
+  outline: none;
+  resize: none;
+  padding: 15px;
+}
+.sponsor-intro textarea:focus {
+  border: 0.6px solid #4EA1E7;
+}
+.add-sponsor-form {
+  padding: 20px 30px 50px 30px;
+  margin-bottom: 40px;
+  background: #FFFFFF;
+  border: 0.6px solid #D1D1D1;
+  display: none;
+}
+.add-sponsor-form .form-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.add-sponsor-form .form-main .upload-sponsor-logo {
+  width: 560px;
+  overflow: hidden;
+}
+.add-sponsor-form .form-main .upload-sponsor-logo label {
+  display: block;
+  float: left;
+}
+.add-sponsor-form .form-main .upload-sponsor-logo .noimg-logo {
+  float: left;
+  margin-left: 40px;
+  margin-right: 30px;
+  width: 120px;
+  height: 120px;
+  background: #D8D8D8;
+  border: 1px solid #D1D1D1;
+  text-align: center;
+  padding-top: 24px;
+}
+.add-sponsor-form .form-main .upload-sponsor-logo .noimg-logo p {
+  font-family: Helvetica;
+  font-size: 30px;
+  color: #A6A6A6;
+}
+.add-sponsor-form .form-main .upload-sponsor-logo .noimg-logo p:last-child {
+  font-family: Helvetica;
+  font-size: 16px;
+  color: #A6A6A6;
+  margin-top: 12px;
+}
+.add-sponsor-form .form-main .upload-sponsor-logo .btn-wrap {
+  float: left;
+}
+.add-sponsor-form .form-main .upload-sponsor-logo .btn-wrap .tips {
+  width: 290px;
+  height: 60px;
+  margin-top: 10px;
+  background: #fff;
+}
+.add-sponsor-form .form-main .upload-sponsor-logo .btn-wrap .tips p {
+  font-size: 14px;
+  color: #9B9B9B;
+}
+.add-sponsor-form .form-main .upload-sponsor-logo .btn-wrap .upload-btn {
+  width: 160px;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+}
+.add-sponsor-form .form-main .upload-sponsor-logo .btn-wrap .upload-btn input {
+  position: absolute;
+  font-size: 100px;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.add-sponsor-form .form-main .upload-sponsor-logo .btn-wrap .upload-btn input:hover {
+  cursor: pointer !important;
+}
+.add-sponsor-form .form-main .upload-sponsor-logo .btn-wrap .upload-btn::after {
+  content: "上传图片";
+  font-family: 'PingFangSC-Regular';
+  font-size: 16px;
+  color: #FFFFFF;
+}
+.add-sponsor-form .form-main .upload-stucard label {
+  display: block;
+  width: 96px;
+  float: left;
+  wrap: wrap;
+}
+.add-sponsor-form .form-main .upload-stucard .noimg-card {
+  width: 220px;
+  height: 120px;
+  background: #D8D8D8;
+  border: 1px solid #D1D1D1;
+  float: left;
+  margin-left: 24px;
+  margin-right: 30px;
+}
+.add-sponsor-form .form-main .upload-stucard .noimg-card p {
+  font-family: Helvetica;
+  font-size: 30px;
+  color: #A6A6A6;
+  text-align: center;
+  line-height: 120px;
+}
+.add-sponsor-form .form-main .upload-stucard .btnwrap {
+  float: left;
+}
+.add-sponsor-form .form-main .upload-stucard .btnwrap .upload-btn {
+  width: 160px;
+  height: 50px;
+  overflow: hidden;
+  position: relative;
+}
+.add-sponsor-form .form-main .upload-stucard .btnwrap .upload-btn input {
+  position: absolute;
+  font-size: 100px;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+.add-sponsor-form .form-main .upload-stucard .btnwrap .upload-btn input:hover {
+  cursor: pointer !important;
+}
+.add-sponsor-form .form-main .upload-stucard .btnwrap .upload-btn::after {
+  content: "上传图片";
+  font-family: 'PingFangSC-Regular';
+  font-size: 16px;
+  color: #FFFFFF;
+}
+.add-sponsor-form .form-main label {
+  font-family: 'PingFangSC-Regular';
+  font-size: 16px;
+  color: #4A4A4A;
+}
+.add-sponsor-form .form-main .sponsor-website-wrap .label-wrap {
+  width: 112px;
+  height: 42px;
+  float: left;
+}
+.add-sponsor-form .form-main .sponsor-website-wrap .label-wrap label {
+  display: block;
+  line-height: 20px;
+  float: none !important;
+}
+.add-sponsor-form .form-main .sponsor-website-wrap .label-wrap span {
+  display: block;
+  width: 70px;
+  text-align: center;
+  font-size: 14px;
+  color: #D1D1D1;
+}
+.form-btns {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+}
+.form-btns .btn-blue, .form-btns .btn-white {
+  width: 280px;
+  height: 50px;
+  font-size: 16px;
+}
+.form-btns .btn-blue {
+  margin-right: 30px;
+}
+
+/*# sourceMappingURL=addsponsor.css.map */
+.my-head {
+  width: 100%;
+  height: 340px;
+  margin-bottom: 30px;
+  background-image: linear-gradient(-90deg, #4BC0FF 4%, #8EE6FF 28%, #FFF593 78%, #FFE865 100%);
+}
+.my-head .my-info {
+  height: 280px;
+  text-align: center;
+  padding: 30px 0;
+}
+.my-head .my-info .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  margin-bottom: 10px;
+}
+.my-head .my-info .my-id {
+  line-height: 28px;
+  font-size: 20px;
+  color: #4EA1E7;
+}
+.my-head .my-info .my-autograph {
+  line-height: 20px;
+  font-size: 14px;
+  color: #4EA1E7;
+}
+.my-head .my-tabbar {
+  width: 100%;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.24);
+  display: flex;
+}
+.my-head .my-tabbar .tab {
+  flex: 1;
+}
+.my-head .my-tabbar .tab .tab-title {
+  text-align: center;
+  font-family: 'PingFangSC-Regular';
+  font-size: 18px;
+  color: #4A4A4A;
+  line-height: 60px;
+  transition: .3s;
+}
+.my-head .my-tabbar .tab .tab-title span {
+  display: inline-block;
+  transform: translateY(1px);
+  margin-left: 20px;
+  font-family: Helvetica;
+  font-size: 24px;
+  color: #4A4A4A;
+  transition: .3s;
+}
+.my-head .my-tabbar .tab-active .tab-title, .my-head .my-tabbar .tab-active span {
+  color: #4EA1E7 !important;
+}
+.my-head .my-tabbar .tab:hover {
+  cursor: pointer;
+}
+.my-head .my-tabbar .tab:hover .tab-title, .my-head .my-tabbar .tab:hover span {
+  color: #4EA1E7;
+}
+.my-body {
+  width: 100%;
+  padding-bottom: 46px;
+}
+.my-body .section-release {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.my-body .section-release .activity-item {
+  width: 280px;
+  height: 238px;
+  background: #fff;
+  margin-bottom: 30px;
+  transition: .3s ease;
+}
+.my-body .section-release .activity-item .top-img {
+  display: block;
+  width: 100%;
+  height: 50%;
+  overflow: hidden;
+}
+.my-body .section-release .activity-item .top-img img {
+  transition: .3s ease;
+}
+.my-body .section-release .activity-item .top-img:hover img {
+  transform: scale(1.2);
+}
+.my-body .section-release .activity-item .bottom-info {
+  width: 100%;
+  height: 50%;
+  padding: 9px 0 0 9px;
+}
+.my-body .section-release .activity-item .bottom-info .info-title {
+  display: block;
+  font-size: 18px;
+  color: #5A5A5A;
+  font-weight: normal;
+  line-height: 25px;
+  margin-bottom: 14px;
+}
+.my-body .section-release .activity-item .bottom-info .info-title:hover {
+  text-decoration: underline;
+}
+.my-body .section-release .activity-item .bottom-info .info-msg {
+  display: inline-block;
+  height: 20px;
+}
+.my-body .section-release .activity-item .bottom-info .info-msg img {
+  height: 20px;
+  width: 20px;
+  transform: translateY(5px);
+  margin-right: 7px;
+}
+.my-body .section-release .activity-item .bottom-info .info-msg p {
+  font-size: 14px;
+  color: #5A5A5A;
+  line-height: 20px;
+}
+.my-body .section-release .activity-item:hover {
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.3);
+}
+.info-msg:nth-child(4) {
+  margin-left: 40px !important;
+  margin-top: 13px;
+}
+.set-myinfo {
+  background: #FCFCFC;
+  box-shadow: 0 1px 3px 0 rgba(203, 203, 203, 0.5);
+  border-radius: 1px;
+  text-align: center;
+  width: 120px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 12px;
+  color: #4EA1E7;
+  margin-top: 29px;
+  transition: .3s;
+}
+.set-myinfo:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.7);
+}
+.set-myinfo:active {
+  box-shadow: inset 0 1px 3px 0 rgba(203, 203, 203, 0.5);
+}
+.section {
+  display: none !important;
+}
+.section-active {
+  display: flex !important;
+}
+.add-sponsor {
+  width: 1180px;
+  height: 60px;
+  margin-bottom: 30px;
+}
+.add-btn {
+  width: 280px;
+  height: 60px;
+  float: left;
+  margin-right: 36px;
+  font-size: 24px;
+}
+.add-tip {
+  margin-top: 10px;
+  width: 840px;
+  height: 40px;
+  font-size: 14px;
+  color: #9B9B9B;
+  float: left;
+}
+.my-sponsors {
+  width: 1180px;
+  height: 230px;
+  border: 1px solid #D1D1D1;
+}
+.my-sponsor {
+  width: 120px;
+  height: 215px;
+  float: left;
+  margin: 14px 0px 0px 14px;
+}
+.logo {
+  width: 120px;
+  height: 120px;
+  border: 1px solid #D1D1D1;
+  box-sizing: content-box;
+}
+.my-sponsor-name {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 8px;
+}
+.my-sponsor-num {
+  font-size: 14px;
+  color: #000000;
+  margin-top: 15px;
+  text-align: center;
+}
+.sponsor-num {
+  color: #4EA1E7;
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=mestyle.css.map */

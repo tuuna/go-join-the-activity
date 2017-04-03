@@ -1,0 +1,39 @@
+article {
+    margin-bottom: 25%;
+}
+article>div {
+	max-width: 1180px;
+	margin: 0 auto;
+	color: #4EA1E7;
+}
+article>div>p {
+	font-size: 24px;
+	width: 295px;
+	height: 33px;
+	margin: 35px 0;
+}
+.tip {
+	height: 120px;
+	background-color: #FFFFFF;
+	position: relative;
+}
+.tip p {
+	position: absolute;
+	top: 45px;
+	left: 431px;
+	font-size: 18px;
+}
+.tip div {
+	width: 28px;
+	height: 28px;
+	font-size: 28px;
+	margin-right: 17px;
+	background-color: #FFCF15;
+	border-radius: 50%;
+	color: white;
+	position: absolute;
+	left: 386px;
+	top: 40px;
+	padding-left: 10px;
+	box-sizing: border-box;
+}

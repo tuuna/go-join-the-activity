@@ -1,0 +1,222 @@
+﻿.buttonblue{
+	width: 110px;
+	height: 40px;
+	font-size: 16px;
+	color: #FFFFFF;
+	background: #4EA1E7;
+	border: 1px solid #4EA1E7;
+	border-radius: 4px;
+	cursor:pointer;
+}
+.buttonwrite{
+	width: 110px;
+	height: 40px;
+	font-size: 16px;
+	color: #4EA1E7;
+	background: #FFFFFF;
+	border: 1px solid #4EA1E7;
+	border-radius: 4px;
+	cursor:pointer;
+}
+.buttongray{
+	width: 60px;
+	height: 40px;
+	font-size: 16px;
+	color: #FFFFFF;
+	border-radius: 4px;
+	background: #D1D1D1;
+	border: 0 solid #D1D1D1;
+	cursor:pointer;
+}
+.num{
+	color: #4EA1E7;
+}
+.nummid{
+	display:line-block;
+	position: absolute;
+	width: 138px;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+}
+.banner{
+	width: 100%;
+	height: 300px;
+	background-image: url(../../img/banner.png);
+	background-repeat: no-repeat;
+	margin-bottom: 40px;
+}
+.container{
+	width: 1180px;
+	height: 1200px;
+	margin: 0 auto;
+	font-family: PingFangSC-Regular;
+	color: #5A5A5A;
+    background:#FFFFFF;
+}
+.left{
+	width: 280px;
+	height: 1200px;
+	float: left;
+}
+.right{
+	width: 880px;
+	height: 1200px;
+	float: right;
+}
+.introduce{
+	width: 280px;
+	height: 530px;
+	border: 1px solid #D1D1D1;
+}
+.logo{
+	width: 240px;
+	height: 240px;
+	background-image: url(../../img/多火logo.png);
+	background-size: 240px 240px;
+	background-position:6px 0px;
+	border: 1px solid #D1D1D1;
+	margin: 19px 19px 26px;
+}
+.name{
+	display: block;
+	text-align: center;
+	font-size: 24px;
+	margin-bottom: 23px;
+}
+.numcont{
+	width: 280px;
+	height: 20px;
+	position: relative;
+}
+.leftnum{
+	left:0px;
+}
+.rightnum{
+	left:140px;
+}
+.line{
+	position: absolute;
+	left: 139px;
+	display: inline-block;
+	width: 1px;
+	height: 20px;
+	background: #4EA1E7;
+}
+.button{
+	width: 240px;
+	height: 40px;
+	margin:25px 19px 0px;
+}
+.fenxiang{
+	margin-left: 15px;
+}
+.introduce>p{
+	width: 240px;
+	height: 60px;
+	margin: 23px 19px 18px;
+	font-size: 14px;
+	letter-spacing: 0;
+}
+.leftdown{
+	width: 280px;
+	height: 140px;
+	margin-top: 30px;
+}
+.leftdown>ul{
+	width: 101px;
+	height: 120px;
+	list-style: none;
+	font-size: 16px;
+	margin: 15px 0px 0px 20px;
+	float: left;
+}
+.leftdown .ma{
+	width: 140px;
+	height: 140px;
+	float: left;
+}
+
+
+.right>ul{
+	width: 880px;
+	height:1120px;
+}
+.right>ul li{
+	list-style: none;
+	width: 880px;
+	height: 240px;
+	margin-bottom: 40px;
+}
+.active-pic{
+	width: 480px;
+	height: 240px;
+	float: left;
+	background-image: url(../../img/Group4.png);
+	background-size:100% 100%;
+}
+.active-s{
+	width: 360px;
+	height: 240px;
+	padding: 20px;
+	float: left;
+	background: #FFFFFF;
+}
+.active-tit{
+	font-size: 24px;
+}
+.active-time,.active-plc{
+	font-size: 18px;
+}
+.active-time,.active-plc,.active-tit{
+	margin-bottom: 12px;
+}
+.icon{
+	transform:translateY(2px);
+}
+.active-num{
+	font-size: 18px;
+	position: relative;
+	height: 25px;
+	width: 400px;
+}
+.active-line{
+	width: 2px;
+	height: 16px;
+	background: #4EA1E7;
+	left: 150px;
+	transform:translateY(5px);
+}
+.active-num>a,.active-line{
+	position: absolute;
+}
+.num-left{
+	left: 0px;
+}
+.num-right{
+	left: 187px;
+}
+.xiangqing{
+	margin-right: 20px;
+}
+.active-button{
+	width: 400px;
+	height: 40px;
+	margin-top: 20px;
+}
+
+.page-num{
+	width: 280px;
+	height: 40px;
+	margin: 0px auto 40px;
+}
+.but-1,.but-2{
+	width: 40px;
+	height: 40px;
+}
+.but-1{
+	margin:0 19px 0 22px;
+}
+.but-2{
+	margin-right: 22px;
+}
