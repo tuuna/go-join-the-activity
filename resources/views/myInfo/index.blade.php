@@ -4,6 +4,20 @@
     $this->title = '个人中心';
     ?>
     <link href="{{ asset('css/me.css') }}" rel="stylesheet">
+    <style>
+
+        .inputfile + label {
+            font-size: 1.25em;
+            font-weight: 700;
+            color: white;
+            background-color: black;
+            display: inline-block;
+        };
+        .inputfile:focus + label,
+        .inputfile + label:hover {
+            background-color: red;
+        };
+    </style>
     <div class="my-container">
         <div class="my-head">
             <!--<embed src="img/上背板.svg" class="my-background">-->
@@ -222,7 +236,8 @@
                         <p class="add-tip">温馨提醒：您可以添加多个主办方资料。什么是主办方？1. 主办活动的组织、团体或机构；您应该是其工作人员或拥有主办方活动冠名授权。 2. 主办方信息核实后才会显示在活动主页；对于没有添加主办方的活动将视为个人活动，仅在活动主页显示您的昵称。</p>
                     </div>
                     <div class="add-sponsor-form">
-                        <form enctype="multipart/form-data" method="post">
+                        <form enctype="multipart/form-data" action="{{ url('sponsor/apply') }}" method="post">
+                            {!! csrf_field() !!}
                             <div class="form-main">
                                 <div class="upload-sponsor-logo">
                                     <label>主办方图标</label>
@@ -230,10 +245,15 @@
                                         <p>LOGO</p>
                                         <p>300*300px</p>
                                     </div>
+                                    <div>
+
+                                    </div>
+
                                     <div class="btn-wrap">
-                                        <div class="btn-blue upload-btn">
-                                            <input type="file" value="上传图片">
-                                        </div>
+                                        {{--<div class="btn-blue upload-btn">--}}
+                                        <input id="sponsor_icon" name="sponsor_icon" type="file" class="inputfile">
+                                        <label for="file">上传</label>
+                                        {{--</div>--}}
 
                                         <div class="tips">
                                             <p>温馨提示：<br>图片小于2M (jpg、gif、png、bmp)推荐尺寸 360*360 px的图片！
@@ -246,11 +266,11 @@
                                 <div class="upload-stucard">
                                     <label>联系人一卡通<br>上传认证</label>
                                     <div class="noimg-card">
-                                        <p>ECARD</p>
+                                        <p>ECARD正面</p>
                                     </div>
                                     <div class="btnwrap">
                                         <div class="btn-blue upload-btn">
-                                            <input type="file" value="上传图片">
+                                            <input name="e-card" id="e-card" type="file" value="上传图片">
                                         </div>
                                     </div>
 
@@ -259,38 +279,39 @@
 
                                 <div class="input-wrap">
                                     <label for="sponsor-name">主办方名称</label>
-                                    <input type="text" id="sponsor-name" placeholder="低于30个字">
+                                    <input name="sponsor-name" type="text" id="sponsor-name" placeholder="低于30个字">
                                 </div>
                                 <div class="input-wrap">
                                     <label for="sponsor-email">联系邮箱</label>
-                                    <input type="email" id="sponsor-email">
+                                    <input name="email" type="email" id="sponsor-email">
                                 </div>
 
 
                                 <div class="input-wrap">
                                     <label for="contact-name">联系人姓名</label>
-                                    <input type="text" id="contact-name">
+                                    <input name="contact-name" type="text" id="contact-name">
+                                    <span ></span>
                                 </div>
                                 <div class="input-wrap">
                                     <label for="contact-info">联系人专业年级</label>
-                                    <input type="text" id="contact-info">
+                                    <input name="contact-info" type="text" id="contact-info">
                                 </div>
 
 
                                 <div class="input-wrap">
                                     <label for="phonenumber">联系电话</label>
-                                    <input type="text" id="phonenumber">
+                                    <input name="phonenumber" type="text" id="phonenumber">
                                 </div>
                                 <div class="input-wrap">
                                     <label for="contact-stuid">联系人学号</label>
-                                    <input type="text" id="contact-stuid">
+                                    <input name="contact-stuid" type="text" id="contact-stuid">
                                 </div>
 
 
                                 <div class="input-wrap sponsor-intro">
                                     <label for="sponsor-intro">主办方简介</label>
 
-                                    <textarea  id="sponsor-intro"></textarea>
+                                    <textarea  name="sponsor-intro" id="sponsor-intro"></textarea>
                                 </div>
 
 
@@ -300,7 +321,7 @@
                                         <span>(可不填)</span>
                                     </div>
 
-                                    <input type="text" id="sponsor-website">
+                                    <input name="sponsor-website" type="text" id="sponsor-website">
                                 </div>
                                 <div class="form-btns">
                                     <button class="btn-blue" type="submit">确认提交审核</button>
@@ -323,4 +344,22 @@
         </div>
     </div>
     <script src="{{ asset('js/me.js') }}"></script>
+    <script>
+        $(function() {
+            $("#sponsor_icon").on("change","input[type='file']",function(){
+                var filePath=$(this).val();
+                if(filePath.indexOf("jpg")!=-1 || filePath.indexOf("png")!=-1){
+                    $(".fileerrorTip").html("").hide();
+                    var arr=filePath.split('\\');
+                    var fileName=arr[arr.length-1];
+                    $(".showFileName").html(fileName);
+                }else{
+                    $(".showFileName").html("");
+                    $(".fileerrorTip").html("您未上传文件，或者您上传文件类型有误！").show();
+                    return false
+                }
+            })
+        });
+
+    </script>
 @endsection

@@ -14,4 +14,9 @@ class Category extends Model
 
     protected $fillable = ['title','parent_id','order','level'];
 
+    public function activities()
+    {
+        return $this->hasMany(Activity::class);
+    }
+
 }

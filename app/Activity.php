@@ -12,4 +12,9 @@ class Activity extends Model
         'activity_background','guest_intro',
         'activity_agenda'
     ];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
