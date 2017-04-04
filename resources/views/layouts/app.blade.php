@@ -31,8 +31,34 @@
                 <input type="search" name="search">
             </div>
             <div>
-                <a href="#" class="navli">登陆/注册</a>
-                <a href="{{ url('/myinfo') }}" class="navli">个人中心</a>
+                <ul class="nav navbar-nav navbar-right">
+                    @if(Auth::guest())
+                        <a href="{{ url('/login') }}" class="navli">登陆/注册</a>
+                    @else
+                        <a href="{{ url('/myinfo') }}" class="navli">个人中心</a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="color: #F0F0F0;">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="{{ url('/logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        退出
+                                    </a>
+
+                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </li>
+                            </ul>
+                        </li>
+                    @endif
+                </ul>
+
+
                 <a href="#" class="navli">发布活动</a>
                 <a href="{{ url('/sponsorlist') }}" class="navli">主办方</a>
             </div>

@@ -90,7 +90,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'en',
+    'fallback_locale' => 'zh_CN',
 
     /*
     |--------------------------------------------------------------------------
@@ -169,6 +169,7 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Encore\Admin\Providers\AdminServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
         /*
          * Application Service Providers...
          */

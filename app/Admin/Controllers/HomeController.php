@@ -32,16 +32,17 @@ class HomeController extends Controller
 
             $content->row('活动行网站解释权由多火所有，如有问题请发邮件admin@duohuo.com');
 
-            $headers = ['Id', '邮件', '用户名','上次登录时间', '状态'];
+            $headers = ['Id', '用户名', '邮箱','注册时间', '状态','邮箱是否激活'];
 
             $users = Admin::getOrderedUser();
 
             foreach ($users as $key => $item) {
                 $status = $item->is_locked ? '锁定' : '可用';
-                $rows[$key] = [$item->id,$item->email,$item->username,$item->updated_at,$status];
+                $emailStatus = $item->is_active ? '已审核' : '未审核';
+                $rows[$key] = [$item->id,$item->username,$item->email,$item->updated_at,$status,$emailStatus];
             }
 
-            $content->row((new Box('最近登录', new Table($headers, $rows)))->style('info')->solid());
+            $content->row((new Box('最近注册', new Table($headers, $rows)))->style('info')->solid());
         });
     }
 }

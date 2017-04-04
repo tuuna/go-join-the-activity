@@ -50,3 +50,12 @@ Route::get('/noresult','NoResultController@index');
  */
 Route::get('/sponsorlist','SponsorListController@index');
 Route::get('/sponsorinfo','SponsorInfoController@index');
+
+/**
+ * 发送邮件注册
+ */
+
+Route::get('email/verify/{token}',[
+            'as' => 'email.verify',
+            'uses' => 'EmailController@verify'
+]);

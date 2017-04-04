@@ -3,13 +3,17 @@
 <?php
     $this->title = '首页';
 ?>
+@if (session()->has('flash_notification.message'))
+    <div class="alert alert-{{ session('flash_notification.level') }}">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+
+        {!! session('flash_notification.message') !!}
+    </div>
+@endif
 <!-- BANNER -->
 <div class="banner_box">
     <img src="img/banner1.png" alt="#">
 </div>
-<?php
-        echo bcrypt('duohuo');
-?>
 <!-- 专题和最热最新 -->
 <div class="ctnt_box_1">
     <!-- 最新最热 -->

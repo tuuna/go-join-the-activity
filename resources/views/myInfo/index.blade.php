@@ -9,10 +9,9 @@
             <!--<embed src="img/上背板.svg" class="my-background">-->
             <div class="my-info">
 
-                <img src="img/mylogo.png" alt="头像" class="avatar">
+                <img src="{{ $myInfo->pic }}" alt="头像" class="avatar">
 
-
-                <p class="my-id">Jemmaaaaaaa</p>
+                <p class="my-id">{{ $myInfo->name }}</p>
                 <p class="my-autograph">Where do we go now?</p>
                 <button class="set-myinfo">账户资料设置</button>
             </div>
