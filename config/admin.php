@@ -30,7 +30,7 @@ return [
     /*
      * Laravel-admin html title.
      */
-    'title'  => 'Admin',
+    'title'  => '活动行后台管理',
 
     /*
      * Laravel-admin auth setting.
@@ -114,7 +114,7 @@ return [
     |               | sidebar-mini                            |
     |---------------------------------------------------------|
      */
-    'layout'  => ['sidebar-mini'],
+    'layout'  => ['sidebar-boxed'],
 
     /*
      * Version displayed in footer.
