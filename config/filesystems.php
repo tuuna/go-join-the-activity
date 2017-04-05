@@ -57,8 +57,7 @@ return [
 
         'upload' => [
             'driver' => 'local',
-            'root' => storage_path('app/public/sponsorUpload'),
-            'url' => env('APP_URL').'/storage',
+            'root' => public_path('upload/sponsorUpload'),
             'visibility' => 'public',
         ],
 
