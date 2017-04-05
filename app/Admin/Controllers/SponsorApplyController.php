@@ -41,8 +41,8 @@ class SponsorApplyController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('活动号管理');
+            $content->description('不支持活动号的添加');
 
             $content->body($this->form());
         });
@@ -67,8 +67,10 @@ class SponsorApplyController extends Controller
             $grid->created_at('创建时间')->sortable();
             $grid->actions(function ($actions) {
                 $actions->disableEdit();
-                $checkPath = url('/apply/'.$actions->getKey());
-                $actions->prepend("<a href='$checkPath'><i class='fa fa-paper-plane'></i></a>");
+                $checkPath = url('admin/apply/'.$actions->getKey());
+                $detail = url('admin/detail/'.$actions->getKey());
+                $actions->prepend("<a href='$detail'><i class='fa fa-eye'>详情</i></a>");
+                $actions->prepend("<a href='$checkPath'><i class='fa fa-paper-plane'>通过</i></a>");
             });
         });
     }
@@ -101,5 +103,11 @@ class SponsorApplyController extends Controller
         ]);
 
         return back();
+    }
+
+    public function detail($id)
+    {
+        $detail = SponsorApply::find($id)->first();
+        return view('detail.index',compact('detail'));
     }
 }
