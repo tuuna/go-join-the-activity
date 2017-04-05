@@ -4,20 +4,13 @@
     $this->title = '个人中心';
     ?>
     <link href="{{ asset('css/me.css') }}" rel="stylesheet">
-    <style>
+    @if (session()->has('flash_notification.message'))
+        <div class="alert alert-{{ session('flash_notification.level') }}">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 
-        .inputfile + label {
-            font-size: 1.25em;
-            font-weight: 700;
-            color: white;
-            background-color: black;
-            display: inline-block;
-        };
-        .inputfile:focus + label,
-        .inputfile + label:hover {
-            background-color: red;
-        };
-    </style>
+            {!! session('flash_notification.message') !!}
+        </div>
+    @endif
     <div class="my-container">
         <div class="my-head">
             <!--<embed src="img/上背板.svg" class="my-background">-->
@@ -230,6 +223,7 @@
             <section class="section">2222</section>
             <section class="section">3333</section>
             <section class="section-my-sponsor section">
+
                 <div>
                     <div class="add-sponsor">
                         <button class="add-btn btn-blue" id="add-sponsor-btn">添加主办方</button>
@@ -250,10 +244,9 @@
                                     </div>
 
                                     <div class="btn-wrap">
-                                        {{--<div class="btn-blue upload-btn">--}}
-                                        <input id="sponsor_icon" name="sponsor_icon" type="file" class="inputfile">
-                                        <label for="file">上传</label>
-                                        {{--</div>--}}
+                                        <div class="btn-blue upload-btn">
+                                            <input id="sponsor_icon" name="sponsor_icon" type="file" class="inputfile">
+                                        </div>
 
                                         <div class="tips">
                                             <p>温馨提示：<br>图片小于2M (jpg、gif、png、bmp)推荐尺寸 360*360 px的图片！
@@ -270,7 +263,7 @@
                                     </div>
                                     <div class="btnwrap">
                                         <div class="btn-blue upload-btn">
-                                            <input name="e-card" id="e-card" type="file" value="上传图片">
+                                            <input name="e_card" id="e-card" type="file" value="上传图片">
                                         </div>
                                     </div>
 
@@ -279,49 +272,49 @@
 
                                 <div class="input-wrap">
                                     <label for="sponsor-name">主办方名称</label>
-                                    <input name="sponsor-name" type="text" id="sponsor-name" placeholder="低于30个字">
+                                    <input name="sponsor_name" type="text" id="sponsor-name" placeholder="低于30个字">
                                 </div>
                                 <div class="input-wrap">
                                     <label for="sponsor-email">联系邮箱</label>
-                                    <input name="email" type="email" id="sponsor-email">
+                                    <input name="contact_email" type="email" id="sponsor-email">
                                 </div>
 
 
                                 <div class="input-wrap">
                                     <label for="contact-name">联系人姓名</label>
-                                    <input name="contact-name" type="text" id="contact-name">
+                                    <input name="contact_name" type="text" id="contact-name">
                                     <span ></span>
                                 </div>
                                 <div class="input-wrap">
-                                    <label for="contact-info">联系人专业年级</label>
-                                    <input name="contact-info" type="text" id="contact-info">
+                                    <label for="project_class">联系人专业年级</label>
+                                    <input name="project_class" type="text" id="contact-info">
                                 </div>
 
 
                                 <div class="input-wrap">
-                                    <label for="phonenumber">联系电话</label>
-                                    <input name="phonenumber" type="text" id="phonenumber">
+                                    <label for="contact_number">联系电话</label>
+                                    <input name="contact_number" type="text" id="phonenumber">
                                 </div>
                                 <div class="input-wrap">
-                                    <label for="contact-stuid">联系人学号</label>
-                                    <input name="contact-stuid" type="text" id="contact-stuid">
+                                    <label for="student_number">联系人学号</label>
+                                    <input name="student_number" type="text" id="contact-stuid">
                                 </div>
 
 
                                 <div class="input-wrap sponsor-intro">
-                                    <label for="sponsor-intro">主办方简介</label>
+                                    <label for="description">主办方简介</label>
 
-                                    <textarea  name="sponsor-intro" id="sponsor-intro"></textarea>
+                                    <textarea  name="description" id="sponsor-intro"></textarea>
                                 </div>
 
 
                                 <div class="input-wrap sponsor-website-wrap">
                                     <div class="label-wrap">
-                                        <label for="sponsor-website">主办方官网网址</label>
+                                        <label for="website">主办方官网网址</label>
                                         <span>(可不填)</span>
                                     </div>
 
-                                    <input name="sponsor-website" type="text" id="sponsor-website">
+                                    <input name="website" type="text" id="sponsor-website">
                                 </div>
                                 <div class="form-btns">
                                     <button class="btn-blue" type="submit">确认提交审核</button>
