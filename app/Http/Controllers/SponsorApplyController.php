@@ -35,7 +35,7 @@ class SponsorApplyController extends Controller
                 'website' => !is_null($request->get('website')) ? $request->get('website') : '',
             ]);
 
-            $this->mail->applyInfo($request->get('contact_email'));
+//            $this->mail->applyInfo($request->get('contact_email'));
             flash('申请成功，请等待审核','success');
             return redirect('/myinfo');
         } else {

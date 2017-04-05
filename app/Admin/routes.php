@@ -13,4 +13,5 @@ Route::group([
     $router->get('/', 'HomeController@index');
     $router->resource('category',CategoryController::class);
     $router->get('sponapp','SponsorApplyController@index');
+    $router->post('apply/{id}','SponsorApplyController@pass');
 });
