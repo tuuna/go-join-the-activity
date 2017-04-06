@@ -62,15 +62,15 @@ class SponsorPassRepository
     public function completeApply($id)
     {
         $data = $this->getInfo($id);
-        $this->create([
+        $user = $this->create([
             'username' => $data->sponsor_name,
             'password' => bcrypt($data->password),
             'email' => $data->contact_email,
             'name' => 'Sponsor',
-            'avatar' => 'upload/sponsorUpload/'.$data->sponsor_icon
+            'avatar' => 'sponsorUpload/'.$data->sponsor_icon
         ]);
 
-        $this->changeRole($id);
+        $this->changeRole($user->id);
 
         return $this->getSponsorInfo($id);
 

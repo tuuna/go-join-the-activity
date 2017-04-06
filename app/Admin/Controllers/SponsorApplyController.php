@@ -124,7 +124,7 @@ class SponsorApplyController extends Controller
 
     public function detail($id)
     {
-        $detail = Sponsor::find($id)->first();
+        $detail = $this->sponsor->getInfo($id);
         return view('detail.index',compact('detail'));
     }
 
