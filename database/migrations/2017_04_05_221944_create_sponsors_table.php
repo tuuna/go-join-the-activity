@@ -15,6 +15,7 @@ class CreateSponsorsTable extends Migration
     {
         Schema::create('sponsors', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('password');
             $table->string('sponsor_icon')->default('')->comment('主办方图标');
             $table->string('e_card')->default('')->comment('联系人一卡通照片');
             $table->string('sponsor_name',40)->comment('主办方名字');
@@ -25,6 +26,10 @@ class CreateSponsorsTable extends Migration
             $table->string('student_number',30)->comment('联系人学号');
             $table->text('description')->comment('主办方简介');
             $table->string('website')->nullable()->comment('主办方官网');
+            $table->tinyInteger('is_locked')->default(0)->comment('0为激活_1为锁定');
+            $table->integer('follow_count')->default(0)->comment('关注人数');
+            $table->tinyInteger('has_passed')->default(0)->comment('是否通过审核');
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
         });
     }

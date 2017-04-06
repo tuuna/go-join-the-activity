@@ -1,16 +1,15 @@
 <?php
 namespace App\Repositories;
 
-use App\SponsorApply;
+use App\Sponsor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Intervention\Image\Facades\Image;
 
 class SponsorApplyRepository
 {
     public function create(array $attributes)
     {
-        return SponsorApply::create($attributes);
+        return Sponsor::create($attributes);
     }
 
     public function storeImage(Request $request,$fileName)

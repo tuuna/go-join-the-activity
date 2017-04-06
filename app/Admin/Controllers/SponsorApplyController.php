@@ -2,7 +2,9 @@
 
 namespace App\Admin\Controllers;
 
-use App\SponsorApply;
+use App\Mail\SponsorApplyMailer;
+use App\Repositories\SponsorPassRepository;
+use App\Sponsor;
 
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -15,6 +17,15 @@ class SponsorApplyController extends Controller
 {
     use ModelForm;
 
+    protected $sponsor;
+    protected $mail;
+
+    public function __construct(SponsorPassRepository $sponsor,SponsorApplyMailer $mail)
+    {
+        $this->sponsor = $sponsor;
+        $this->mail = $mail;
+    }
+
     /**
      * Index interface.
      *
@@ -25,7 +36,7 @@ class SponsorApplyController extends Controller
         return Admin::content(function (Content $content) {
 
             $content->header('活动号审核');
-            $content->description('操作中点击左按钮审核通过');
+            $content->description('审核通过后相应审核数据自动消失');
 
             $content->body($this->grid());
         });
@@ -55,8 +66,9 @@ class SponsorApplyController extends Controller
      */
     protected function grid()
     {
-        return Admin::grid(SponsorApply::class, function (Grid $grid) {
-
+        return Admin::grid(Sponsor::class, function (Grid $grid) {
+            $grid->model()->where('has_passed','=',0);
+            $grid->model()->orderBy('created_at','DESC');
             $grid->id('ID');
             $grid->column('sponsor_icon','活动号标')->display(function ($icon) {
                 $mainPath = '/upload/sponsorUpload/'.$icon;
@@ -64,14 +76,19 @@ class SponsorApplyController extends Controller
             });
             $grid->column('sponsor_name','活动号名');
             $grid->column('contact_email','联系邮件');
-            $grid->created_at('创建时间')->sortable();
+            $grid->created_at('创建时间');
             $grid->actions(function ($actions) {
                 $actions->disableEdit();
-                $checkPath = url('admin/apply/'.$actions->getKey());
-                $detail = url('admin/detail/'.$actions->getKey());
+                $actions->disableDelete();
+                $id = $actions->getKey();
+                $checkPath = url('admin/apply/'.$id);
+                $detail = url('admin/detail/'.$id);
+                $deletePath = url('admin/deletesponsor/'.$id);
                 $actions->prepend("<a href='$detail'><i class='fa fa-eye'>详情</i></a>");
                 $actions->prepend("<a href='$checkPath'><i class='fa fa-paper-plane'>通过</i></a>");
+                $actions->append("<a href='$deletePath'><i class='fa fa-trash'>删除</i></a>");
             });
+            $grid->disableCreation();
         });
     }
 
@@ -82,7 +99,7 @@ class SponsorApplyController extends Controller
      */
     protected function form()
     {
-        return Admin::form(SponsorApply::class, function (Form $form) {
+        return Admin::form(Sponsor::class, function (Form $form) {
 
             $form->display('id', 'ID');
 
@@ -97,17 +114,27 @@ class SponsorApplyController extends Controller
      */
     public function pass($id)
     {
-        SponsorApply::find($id)
-            ->update([
-            'has_passed' => 1
-        ]);
-
-        return back();
+        $this->sponsor->passTheSponsor($id) ?
+            flash('审核通过','success') :
+            flash('审核失败，请重试','danger');
+        $data = $this->sponsor->completeApply($id);
+        $this->mail->sendSponsorInfo($data);
+        return redirect('admin/sponapp');
     }
 
     public function detail($id)
     {
-        $detail = SponsorApply::find($id)->first();
+        $detail = Sponsor::find($id)->first();
         return view('detail.index',compact('detail'));
+    }
+
+    public function deleteSponsor($id)
+    {
+        $data = $this->sponsor->failToApplyInfo($id);
+        $this->sponsor->failToPassSponsor($id) ?
+            flash('删除成功，该活动号审核失败','success') :
+            flash('删除失败，请重试','danger');
+        $this->mail->sendFailSponsorInfo($data);
+        return redirect('admin/sponapp');
     }
 }

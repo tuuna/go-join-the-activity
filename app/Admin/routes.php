@@ -13,6 +13,7 @@ Route::group([
     $router->get('/', 'HomeController@index');
     $router->resource('category',CategoryController::class);
     $router->resource('sponapp',SponsorApplyController::class);
-    $router->post('apply/{id}','SponsorApplyController@pass');
+    $router->get('apply/{id}','SponsorApplyController@pass');
     $router->get('detail/{id}','SponsorApplyController@detail');
+    $router->get('deletesponsor/{id}','SponsorApplyController@deleteSponsor');
 });

@@ -20,4 +20,14 @@ class SponsorApplyMailer extends Mailer
         ];
         $this->sendTo('emails.sponsorApply',$data,$email,'请等待审核');
     }
+
+    public function sendSponsorInfo($data)
+    {
+        $this->sendTo('emails.sponsorInfo',$data,$data['email'],'恭喜您的活动号审核成功');
+    }
+
+    public function sendFailSponsorInfo($data)
+    {
+        $this->sendTo('emails.sponsorFailInfo',$data,$data['email'],'您的活动号审核失败');
+    }
 }

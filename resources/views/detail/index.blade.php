@@ -1,8 +1,8 @@
 <label>活动号图标</label>
-<img src="{{ asset($detail->sponsor_icon)  }}">
+<img src="{{ asset('upload/sponsorUpload/'.$detail->sponsor_icon)  }}">
 <br>
 <label>一卡通</label>
-<img src="{{ asset($detail->e_card) }}">
+<img src="{{ asset('upload/sponsorUpload/'.$detail->e_card) }}">
 <br>
 <label>活动号名</label>
 <p>{{ $detail->sponsor_name }}</p>
