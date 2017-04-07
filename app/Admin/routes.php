@@ -1,6 +1,5 @@
 <?php
 
-use App\Admin\Controllers\SponsorChangePassController;
 use Illuminate\Routing\Router;
 
 Admin::registerHelpersRoutes();
