@@ -18,4 +18,6 @@ Route::group([
     $router->get('deletesponsor/{id}','SponsorApplyController@deleteSponsor');
     $router->resource('sponinfoupdate', SponsorUpdateController::class);
     $router->resource('changepass', SponsorChangePassController::class);
+    $router->resource('managesponsor', SponsorActivityController::class);
+
 });
