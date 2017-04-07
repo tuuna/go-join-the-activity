@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+
 return [
 
     /*
@@ -49,11 +51,11 @@ return [
         'disk' => 'admin',
 
         'directory'  => [
-            'image'  => 'image',
+            'image'  => 'sponsor_admin_update',
             'file'   => 'file',
         ],
 
-        'host' => 'http://localhost:8000/upload/',
+        'host' => 'http://localhost:8000/upload/sponsorUpload',
     ],
 
     /*

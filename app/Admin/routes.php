@@ -1,5 +1,6 @@
 <?php
 
+use App\Admin\Controllers\SponsorChangePassController;
 use Illuminate\Routing\Router;
 
 Admin::registerHelpersRoutes();
@@ -16,4 +17,6 @@ Route::group([
     $router->get('apply/{id}','SponsorApplyController@pass');
     $router->get('detail/{id}','SponsorApplyController@detail');
     $router->get('deletesponsor/{id}','SponsorApplyController@deleteSponsor');
+    $router->resource('sponinfoupdate', SponsorUpdateController::class);
+    $router->resource('changepass', SponsorChangePassController::class);
 });

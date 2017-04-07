@@ -26,6 +26,7 @@ class CreateSponsorsTable extends Migration
             $table->string('student_number',30)->comment('联系人学号');
             $table->text('description')->comment('主办方简介');
             $table->string('website')->nullable()->comment('主办方官网');
+            $table->string('weixin',100)->nullable()->comment('微信二维码');
             $table->tinyInteger('is_locked')->default(0)->comment('0为激活_1为锁定');
             $table->integer('follow_count')->default(0)->comment('关注人数');
             $table->tinyInteger('has_passed')->default(0)->comment('是否通过审核');

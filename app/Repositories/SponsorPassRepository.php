@@ -67,7 +67,7 @@ class SponsorPassRepository
             'password' => bcrypt($data->password),
             'email' => $data->contact_email,
             'name' => 'Sponsor',
-            'avatar' => 'sponsorUpload/'.$data->sponsor_icon
+            'avatar' => $data->sponsor_icon
         ]);
 
         $this->changeRole($user->id);
