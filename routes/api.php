@@ -1,5 +1,6 @@
 <?php
 
+use App\Sponsor;
 use Illuminate\Http\Request;
 
 /*
@@ -16,3 +17,12 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::middleware('api')->get('/othersponsor',
+    function (Request $request) {
+        $sponsors = Sponsor::select(['id','sponsor_name'])
+                    ->where('sponsor_name','like',
+                        '%'.$request->query('q').'%')
+                    ->get();
+        return $sponsors;
+    });

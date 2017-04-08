@@ -17,9 +17,9 @@ class CreateActivitiesTable extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
             $table->integer('sponsor_id')->unsigned()->comment('主办方ID');
             $table->integer('category_id')->unsigned();
+            $table->string('othersponsors')->nullable();
             $table->integer('follow_count')->default(0)->comment('收藏量');
             $table->integer('click_count')->default(0)->comment('点击量');
             $table->string('title',40)->comment('活动标题');

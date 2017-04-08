@@ -7,14 +7,30 @@ use Illuminate\Database\Eloquent\Model;
 class Activity extends Model
 {
     protected $fillable = [
-        'user_id','sponsor_id','category_id',
+        'category_id','sponsor_id',
         'title','pic','hold_time','contain_count',
         'activity_background','guest_intro',
-        'activity_agenda'
+        'activity_agenda','othersponsors'
     ];
 
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function setOthersponsorsAttribute($othersponsors)
+    {
+        if (is_array($othersponsors)) {
+            $this->attributes['othersponsors'] = join(',', $othersponsors);
+        }
+    }
+
+    public function getOthersponsorsAttribute($othersponsors)
+    {
+        if (is_string($othersponsors)) {
+            return explode(',', $othersponsors);
+        }
+
+        return $othersponsors;
     }
 }
