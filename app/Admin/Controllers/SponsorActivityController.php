@@ -75,11 +75,15 @@ class SponsorActivityController extends Controller
     protected function grid()
     {
         return Admin::grid(Activity::class, function (Grid $grid) {
-
-            $grid->id('ID')->sortable();
-
+            $grid->model()->orderBy('hold_time','DESC');
+            $grid->id('ID');
+            $grid->column('title','活动标题');
+            $grid->column('hold_time','举办时间');
+            /*$grid->columns('othersponsors')->each(function ($arr) {
+                return Sponsor::where('id',$arr)->first()->sponsor_name;
+            });*/
+            $grid->category()->title('所属分类');
             $grid->created_at();
-            $grid->updated_at();
         });
     }
 
@@ -109,7 +113,7 @@ class SponsorActivityController extends Controller
             $form->text('contain_count','活动容纳人数');
             $form->textarea('activity_background','活动背景介绍');
             $form->textarea('guest_intro','活动嘉宾介绍');
-            $form->textarea('activity_agenda','活动议程安排');
+            $form->editor('activity_agenda','活动议程安排');
             $form->hidden('sponsor_id')->value($sponsor_id);
         });
     }

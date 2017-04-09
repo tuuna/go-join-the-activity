@@ -73,9 +73,8 @@ class SponsorUpdateController extends Controller
     }
 
     /**
-     * Make a grid builder.
-     *
-     * @return Grid
+     * @param $id
+     * @return mixed
      */
     protected function grid($id)
     {
