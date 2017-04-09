@@ -49,7 +49,7 @@ Route::get('/noresult','NoResultController@index');
  * 主办方个人中心
  */
 Route::get('/sponsorlist','SponsorListController@index');
-Route::get('/sponsorinfo','SponsorInfoController@index');
+Route::get('/sponsorinfo/{id}','SponsorInfoController@index');
 
 /**
  * 发送邮件注册

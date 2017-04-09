@@ -59,7 +59,7 @@
                 </ul>
 
 
-                <a href="#" class="navli">发布活动</a>
+                <a href="{{ url('/admin') }}" class="navli">发布活动</a>
                 <a href="{{ url('/sponsorlist') }}" class="navli">主办方</a>
             </div>
         </nav>

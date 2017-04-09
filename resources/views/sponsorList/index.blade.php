@@ -7,78 +7,14 @@
 <div class="jianbian"></div>
 <div class="container">
     <ul class="list">
+        @foreach($sponsorLists as $list)
         <li>
-            <div class="logo"></div>
-            <a>多火工作室</a>
-            <span><a>4888</a>人关注</span>
+            <img src="{{ asset('upload/sponsorUpload/'.$list['sponsor_icon']) }}" class="logo" alt="主办方图标" />
+            <a href="{{ url('sponsorinfo/'.$list['id']) }}">{{ $list['sponsor_name'] }}</a>
+            <span>{{ $list['follow_count'] }}人关注</span>
             <button>关注</button>
         </li>
-        <li>
-            <div class="logo"></div>
-            <a>多火工作室</a>
-            <span><a>4888</a>人关注</span>
-            <button>关注</button>
-        </li>
-        <li>
-            <div class="logo"></div>
-            <a>多火工作室</a>
-            <span><a>4888</a>人关注</span>
-            <button>关注</button>
-        </li>
-        <li>
-            <div class="logo"></div>
-            <a>多火工作室</a>
-            <span><a>4888</a>人关注</span>
-            <button>关注</button>
-        </li>
-        <li>
-            <div class="logo"></div>
-            <a>多火工作室</a>
-            <span><a>4888</a>人关注</span>
-            <button>关注</button>
-        </li>
-        <li>
-            <div class="logo"></div>
-            <a>多火工作室</a>
-            <span><a>4888</a>人关注</span>
-            <button>关注</button>
-        </li>
-        <li>
-            <div class="logo"></div>
-            <a>多火工作室</a>
-            <span><a>4888</a>人关注</span>
-            <button>关注</button>
-        </li>
-        <li>
-            <div class="logo"></div>
-            <a>多火工作室</a>
-            <span><a>4888</a>人关注</span>
-            <button>关注</button>
-        </li>
-        <li>
-            <div class="logo"></div>
-            <a>多火工作室</a>
-            <span><a>4888</a>人关注</span>
-            <button>关注</button>
-        </li>
-        <li>
-            <div class="logo"></div>
-            <a>多火工作室</a>
-            <span><a>4888</a>人关注</span>
-            <button>关注</button>
-        </li>
-        <li>
-            <div class="logo"></div>
-            <a>多火工作室</a>
-            <span><a>4888</a>人关注</span>
-            <button>关注</button>
-        </li>
-        <li>
-            <div class="logo"></div>
-            <a>多火工作室</a>
-            <span><a>4888</a>人关注</span>
-            <button>关注</button>
-        </li>
+        @endforeach
     </ul>
 </div>
 @endsection

@@ -8,19 +8,26 @@
 <div class="container">
     <div class="left">
         <div class="introduce">
-            <div class="logo"></div>
+            <img class="logo" src="{{ asset('upload/sponsorUpload/'.$sponsorInfo['sponsor_icon']) }}"/>
             <a class="name">多火工作室</a>
             <div class="numcont">
-                <a class="nummid leftnum"><span class="num">3 </span> 活动</a>
+                @if($sponsorInfo['count'])
+                    <a class="nummid leftnum"><span class="num"> {{ $sponsorInfo['count'] }}</span> 活动</a>
+                @else
+                    <b class="nummid leftnum"><span class="num"> {{ $sponsorInfo['count'] }}</span> 活动</b>
+                @endif
                 <div class="line"></div>
-                <a class="nummid rightnum"><span class="num">4000 </span> 粉丝</a>
+                <a class="nummid rightnum"><span class="num">{{ $sponsorInfo['follow_count'] }} </span> 粉丝</a>
             </div>
             <div class="button">
                 <button class="guanzhu buttonblue">关注</button>
                 <button class="fenxiang buttonwrite pull-right">分享</button>
             </div>
-            <p>多火工作室成立于2009年，是一所互联网社团，多火工作室成立于2009年，是一所全面的IT技术社团。</p>
+            <p>{{ $sponsorInfo['description'] }}</p>
         </div>
+        @if(is_null($sponsorInfo['weixin']))
+            <div></div>
+        @else
         <div class="leftdown">
             <embed class="ma" src="img/ma.svg" type="image/svg+xml" />
             <ul>
@@ -31,6 +38,7 @@
                 <li>更多活动</li>
             </ul>
         </div>
+        @endif
     </div>
     <div class="right">
         <ul>
