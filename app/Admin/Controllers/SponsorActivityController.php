@@ -114,6 +114,9 @@ class SponsorActivityController extends Controller
             $form->textarea('activity_background','活动背景介绍');
             $form->textarea('guest_intro','活动嘉宾介绍');
             $form->editor('activity_agenda','活动议程安排');
+            $form->tags('tags','活动标签')
+                ->ajax('/api/tag','id','name')
+                ->placeholder('文章标签');
             $form->hidden('sponsor_id')->value($sponsor_id);
         });
     }

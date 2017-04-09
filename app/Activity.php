@@ -33,4 +33,20 @@ class Activity extends Model
 
         return $othersponsors;
     }
+
+    public function setTagsAttribute($tags)
+    {
+        if (is_array($tags)) {
+            $this->attributes['tags'] = join(',', $tags);
+        }
+    }
+
+    public function getTagsAttribute($tags)
+    {
+        if (is_string($tags)) {
+            return explode(',', $tags);
+        }
+
+        return $tags;
+    }
 }

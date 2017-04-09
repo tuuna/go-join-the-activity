@@ -20,6 +20,7 @@ class CreateActivitiesTable extends Migration
             $table->integer('sponsor_id')->unsigned()->comment('主办方ID');
             $table->integer('category_id')->unsigned();
             $table->string('othersponsors')->nullable();
+            $table->string('tags')->nullable();
             $table->integer('follow_count')->default(0)->comment('收藏量');
             $table->integer('click_count')->default(0)->comment('点击量');
             $table->string('title',40)->comment('活动标题');

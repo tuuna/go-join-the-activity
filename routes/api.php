@@ -26,3 +26,12 @@ Route::middleware('api')->get('/othersponsor',
                     ->get();
         return $sponsors;
     });
+
+Route::middleware('api')->get('/tag',
+    function (Request $request) {
+        $sponsors = Sponsor::select(['id','name'])
+            ->where('name','like',
+                '%'.$request->query('q').'%')
+            ->get();
+        return $sponsors;
+    });
