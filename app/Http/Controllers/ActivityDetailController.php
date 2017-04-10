@@ -13,7 +13,10 @@ class ActivityDetailController extends Controller
     {
         $this->activityDetail = $activityDetail;
     }
+
     /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      * 页面的基本显示以及页面数据的渲染
      */
     public function index($id)

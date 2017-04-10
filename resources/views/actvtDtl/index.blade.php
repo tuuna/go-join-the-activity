@@ -7,14 +7,14 @@
     <div class="activityDetail-main">
         <div class="activity-top">
             <div class="activity-img">
-                <img src="{{ asset('upload/'.$pic) }}" alt="活动详情" id="activity-img">
+                <img src="{{ asset('upload/'.$activityDetail['pic']) }}" alt="活动详情" style="width: 580px; height: 320px;" id="activity-img">
             </div>
             <div class="activity-signup">
-                <p class="signup-title">{{ $activityDetail->title }}</p>
-                <p class="signup-p signup-time"><embed src="img/sponsoricon.svg" />{{ $activityDetail['hold_time'] }}</p>
-                <p class="signup-p signup-address"><embed src="img/sponsoricon.svg" />{{ $activityDetail['hold_address'] }}</p>
-                <p class="signup-p signup-number"><embed src="img/sponsoricon.svg" />{{ $activityDetail['contain_count'] }}人</p>
-                <p class="signup-p signup-sponsor"><embed src="img/sponsoricon.svg" />{{ $activityDetail['mainSponsor']['sponsor_name'] }}主办</p>
+                <p class="signup-title">{{ $activityDetail['title'] }}</p>
+                <p class="signup-p signup-time"><embed src="{{ asset('img/sponsoricon.svg') }}" />{{ $activityDetail['hold_time'] }}</p>
+                <p class="signup-p signup-address"><embed src="{{ asset('img/sponsoricon.svg') }}" />{{ $activityDetail['hold_address'] }}</p>
+                <p class="signup-p signup-number"><embed src="{{ asset('img/sponsoricon.svg') }}" />{{ $activityDetail['contain_count'] }}人</p>
+                <p class="signup-p signup-sponsor"><embed src="{{ asset('img/sponsoricon.svg') }}" />{{ $activityDetail['main_sponsor']['sponsor_name'] }}主办</p>
                 <button class="btn-blue" id="sign-up">我要报名</button>
                 <button class="btn-white" id="favorite">收藏</button>
             </div>
@@ -52,7 +52,7 @@
                 <dt>活动背景</dt>
                 <dd class="activity-kinds-content">
                     <p>
-                       {{ $activityDetail['activity_background'] }}
+                       {!! $activityDetail['activity_background'] !!}
                     </p>
                 </dd>
             </dl>
@@ -60,7 +60,7 @@
                 <dt>活动嘉宾</dt>
                 <dd class="activity-kinds-content">
                     <p>
-                        {{ $activityDetail['guest_intro'] }}
+                        {!! $activityDetail['guest_intro'] !!}
                     </p>
                 </dd>
             </dl>
@@ -69,43 +69,52 @@
                 <dd class="activity-kinds-content">
                     <!--table-->
                     <p>
-                        {{ $activityDetail['activity_agenda'] }}
+                        {!! $activityDetail['activity_agenda'] !!}
                     </p>
                 </dd>
             </dl>
             <dl class="activity-kinds">
                 <dt>活动主办方</dt>
                 <dd class="activity-kinds-content">
-                    多火工作室、36kr、Opark创业中国
+                    {{ $activityDetail['main_sponsor']['sponsor_name'] }}
+                    @if($activityDetail['other_sponsor_name'][0] != null)
+                        @foreach($activityDetail['other_sponsor_name'] as $detail)
+                            、{{ $detail['sponsor_name'] }}
+                        @endforeach
+                    @else
+                    @endif
                 </dd>
                 <ul class="activity-sponsors">
                     <li>
-                        <a href="#!">
-                            <img src="img/多火logo.png" alt="多火工作室"/>
-                            <span>多火工作室</span>
+                        <a href="{{ url('sponsorinfo/'.$activityDetail['main_sponsor']['id']) }}">
+                            <img src="{{ asset('upload/sponsorUpload/'.$activityDetail['main_sponsor']['sponsor_icon']) }}" alt="{{ $activityDetail['main_sponsor']['sponsor_name'] }}"/>
+                            <span>{{ $activityDetail['main_sponsor']['sponsor_name'] }}</span>
                         </a>
                     </li>
-                    <li>
-                        <a href="#!">
-                            <img src="img/多火logo.png" alt="多火工作室"/>
-                            <span>多火工作室</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#!">
-                            <img src="img/多火logo.png" alt="多火工作室"/>
-                            <span>多火工作室</span>
-                        </a>
-                    </li>
+                    @if($activityDetail['other_sponsor_name'][0] != null)
+                        @foreach($activityDetail['other_sponsor_name'] as $detail)
+                            <li>
+                                <a href="{{ url('sponsorinfo/'.$detail['id']) }}">
+                                    <img src="{{ asset('upload/sponsorUpload/'.$detail['sponsor_icon']) }}" alt="{{ $detail['sponsor_name'] }}"/>
+                                    <span>{{ $detail['sponsor_name'] }}</span>
+                                </a>
+                            </li>
+                        @endforeach
+                    @else
+                    @endif
                 </ul>
             </dl>
             <dl class="activity-kinds">
                 <dt>活动标签</dt>
                 <dd class="activity-kinds-content">
                     <ul class="activity-tags">
-                        <li><a href="#!" class="acticity-tag-btn">创业</a></li>
-                        <li><a href="#!" class="acticity-tag-btn">互联网</a></li>
-                        <li><a href="#!" class="acticity-tag-btn">科技</a></li>
+                        @if($activityDetail['tags'][0] == null)
+                            <p>暂无标签</p>
+                        @else
+                            @foreach($activityDetail['tags'] as $tag)
+                            <li><a href="#" class="acticity-tag-btn">{{ $tag }}</a></li>
+                            @endforeach
+                        @endif
                     </ul>
 
 
@@ -121,7 +130,7 @@
                     <ul class="activity-kind-btn-wrap">
                         <li>
                             <a href="#!" class="activity-kind-btn">
-                                {{  }}
+                                {{ $activityDetail['category']['title'] }}
                             </a>
                         </li>
                     </ul>
