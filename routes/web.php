@@ -26,7 +26,7 @@ Route::get('/myinfo','MyInfoController@index');
 /**
  * 活动详情页面
  */
-Route::get('/detail','ActivityDetailController@index');
+Route::get('/detail/{id}','ActivityDetailController@index');
 
 /**
  * 活动主页

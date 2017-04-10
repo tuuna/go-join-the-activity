@@ -14,6 +14,7 @@ use App\Sponsor;
 
 class SponsorInfoRepository
 {
+
     public function getCertainSponsorInfo($id)
     {
         $activityCount = Activity::where('sponsor_id',$id)->count();
@@ -23,5 +24,13 @@ class SponsorInfoRepository
         ])->where('id',$id)->first()->toArray();
         $sponsorInfo = array_add($sponsorInfo,'count',$activityCount);
         return $sponsorInfo;
+    }
+
+    public function getActivityInfo($id)
+    {
+        $activityInfo = Activity::select([
+            'id','title','hold_time','hold_address','signUp_count','follow_count'
+        ])->where('sponsor_id',$id)->get();
+        return $activityInfo;
     }
 }

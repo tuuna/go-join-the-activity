@@ -78,6 +78,7 @@ class AdminActivityController extends Controller
             $grid->disableCreation();
             $grid->column('title','活动标题');
             $grid->column('hold_time','举办时间');
+            $grid->column('hold_address','活动时间');
             $grid->category()->title('所属分类');
             $grid->created_at();
             $grid->updated_at();
@@ -106,6 +107,7 @@ class AdminActivityController extends Controller
             $form->text('title','活动标题');
             $form->image('pic','活动图片');
             $form->text('hold_time','活动时间');
+            $form->text('hold_address','活动地址');
             $form->text('contain_count','活动容纳人数');
             $form->textarea('activity_background','活动背景介绍');
             $form->textarea('guest_intro','活动嘉宾介绍');

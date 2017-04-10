@@ -23,10 +23,12 @@ class CreateActivitiesTable extends Migration
             $table->string('tags')->nullable();
             $table->integer('follow_count')->default(0)->comment('收藏量');
             $table->integer('click_count')->default(0)->comment('点击量');
+            $table->integer('signUp_count')->default(0)->comment('报名数');
             $table->string('title',40)->comment('活动标题');
             $table->string('pic')->comment('活动图片');
             $table->string('hold_time')->comment('预计举办时间');
             $table->integer('contain_count')->default(50)->comment('活动容纳人数');
+            $table->string('hold_address',100)->default('南京信息工程大学')->comment('活动举办地址');
             $table->text('activity_background')->comment('活动背景介绍');
             $table->text('guest_intro')->comment('嘉宾介绍_宣讲人');
             $table->text('activity_agenda')->comment('活动议程_内容简述');

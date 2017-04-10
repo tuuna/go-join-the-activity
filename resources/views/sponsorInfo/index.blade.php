@@ -9,7 +9,7 @@
     <div class="left">
         <div class="introduce">
             <img class="logo" src="{{ asset('upload/sponsorUpload/'.$sponsorInfo['sponsor_icon']) }}"/>
-            <a class="name">多火工作室</a>
+            <a class="name">{{ $sponsorInfo['sponsor_name'] }}</a>
             <div class="numcont">
                 @if($sponsorInfo['count'])
                     <a class="nummid leftnum"><span class="num"> {{ $sponsorInfo['count'] }}</span> 活动</a>
@@ -17,7 +17,7 @@
                     <b class="nummid leftnum"><span class="num"> {{ $sponsorInfo['count'] }}</span> 活动</b>
                 @endif
                 <div class="line"></div>
-                <a class="nummid rightnum"><span class="num">{{ $sponsorInfo['follow_count'] }} </span> 粉丝</a>
+                <b class="nummid rightnum"><span class="num">{{ $sponsorInfo['follow_count'] }} </span> 粉丝</b>
             </div>
             <div class="button">
                 <button class="guanzhu buttonblue">关注</button>
@@ -42,74 +42,25 @@
     </div>
     <div class="right">
         <ul>
+            @foreach($activityInfo as $info)
             <li>
                 <div class="active-pic"></div>
                 <div class="active-s">
-                    <p class="active-tit">南信大最炫千人城市夜跑活动</p>
-                    <p class="active-time"><embed class="icon" src="img/time.svg" type="image/svg+xml" /> 时间：2016-11-22(二) 09:30~12:30</p>
-                    <p class="active-plc"><img class="icon" src="img/plc.png"> 地址：明德楼门口</p>
+                    <p class="active-tit">{{ $info['title'] }}</p>
+                    <p class="active-time"><embed class="icon" src="{{ asset('img/time.svg') }}" type="image/svg+xml" /> 时间：{{ $info['hold_time'] }}</p>
+                    <p class="active-plc"><img class="icon" src="{{ asset('img/plc.png') }}"> 地址：{{ $info['hold_address'] }}</p>
                     <div class="active-num">
-                        <a class="num-left">报名人数：84</a>
+                        <b class="num-left">报名人数：{{ $info['signUp_count'] }}</b>
                         <div class="active-line"></div>
-                        <a class="num-right">收藏人数：84</a>
+                        <b class="num-right">收藏人数：{{ $info['follow_count'] }}</b>
                     </div>
                     <div class="active-button">
-                        <button class="xiangqing buttonblue">查看详情</button>
+                        <button class="xiangqing buttonblue"><a href="{{ url('detail/'.$info['id']) }}" style="color: white;text-decoration: none;">查看详情</a></button>
                         <button class="shoucang buttonwrite">收藏</button>
                     </div>
                 </div>
             </li>
-            <li>
-                <div class="active-pic"></div>
-                <div class="active-s">
-                    <p class="active-tit">南信大最炫千人城市夜跑活动</p>
-                    <p class="active-time"><embed class="icon" src="img/time.svg" type="image/svg+xml" /> 时间：2016-11-22(二) 09:30~12:30</p>
-                    <p class="active-plc"><img class="icon" src="img/plc.png"> 地址：明德楼门口</p>
-                    <div class="active-num">
-                        <a class="num-left">报名人数：84</a>
-                        <div class="active-line"></div>
-                        <a class="num-right">收藏人数：84</a>
-                    </div>
-                    <div class="active-button">
-                        <button class="xiangqing buttonblue">查看详情</button>
-                        <button class="shoucang buttonwrite">收藏</button>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="active-pic"></div>
-                <div class="active-s">
-                    <p class="active-tit">南信大最炫千人城市夜跑活动</p>
-                    <p class="active-time"><embed class="icon" src="img/time.svg" type="image/svg+xml" /> 时间：2016-11-22(二) 09:30~12:30</p>
-                    <p class="active-plc"><img class="icon" src="img/plc.png"> 地址：明德楼门口</p>
-                    <div class="active-num">
-                        <a class="num-left">报名人数：84</a>
-                        <div class="active-line"></div>
-                        <a class="num-right">收藏人数：84</a>
-                    </div>
-                    <div class="active-button">
-                        <button class="xiangqing buttonblue">查看详情</button>
-                        <button class="shoucang buttonwrite">收藏</button>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="active-pic"></div>
-                <div class="active-s">
-                    <p class="active-tit">南信大最炫千人城市夜跑活动</p>
-                    <p class="active-time"><embed class="icon" src="img/time.svg" type="image/svg+xml" /> 时间：2016-11-22(二) 09:30~12:30</p>
-                    <p class="active-plc"><img class="icon" src="img/plc.png"> 地址：明德楼门口</p>
-                    <div class="active-num">
-                        <a class="num-left">报名人数：84</a>
-                        <div class="active-line"></div>
-                        <a class="num-right">收藏人数：84</a>
-                    </div>
-                    <div class="active-button">
-                        <button class="xiangqing buttonblue">查看详情</button>
-                        <button class="shoucang buttonwrite">收藏</button>
-                    </div>
-                </div>
-            </li>
+            @endforeach
         </ul>
         <div class="page-num">
             <button class="but-qian buttongray"><</button>

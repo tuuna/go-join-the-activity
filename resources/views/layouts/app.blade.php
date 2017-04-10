@@ -83,7 +83,7 @@
             </ul>
         </div>
         <div class="rit">
-            <embed class="ma" src="img/ma.svg" type="image/svg+xml" />
+            <embed class="ma" src="{{ asset('img/ma.svg') }}" type="image/svg+xml" />
             <ul>
                 <li>扫一扫关注</li>
                 <li>多火工作室</li>

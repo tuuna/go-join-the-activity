@@ -17,6 +17,7 @@ class SponsorInfoController extends Controller
     public function index($id)
     {
         $sponsorInfo = $this->sponsorInfo->getCertainSponsorInfo($id);
-        return view('sponsorInfo.index',compact('sponsorInfo'));
+        $activityInfo = $this->sponsorInfo->getActivityInfo($id);
+        return view('sponsorInfo.index',['sponsorInfo' => $sponsorInfo,'activityInfo' => $activityInfo]);
     }
 }
