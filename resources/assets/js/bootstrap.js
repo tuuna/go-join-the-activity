@@ -10,7 +10,7 @@ window._ = require('lodash');
 window.$ = window.jQuery = require('jquery');
 
 require('bootstrap-sass');
-
+require('./qrcode.min');
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
  * using reactive data binding and reusable components. Vue's API is clean
@@ -18,6 +18,12 @@ require('bootstrap-sass');
  */
 
 window.Vue = require('vue');
+require('vue-resource');
+Vue.http.interceptors.push((request, next) => {
+    request.headers.set('Authorization',Laravel.apiToken);
+
+next();
+});
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -29,7 +35,8 @@ window.axios = require('axios');
 
 window.axios.defaults.headers.common = {
     'X-CSRF-TOKEN': window.Laravel.csrfToken,
-    'X-Requested-With': 'XMLHttpRequest'
+    'X-Requested-With': 'XMLHttpRequest',
+    'Authorization': Laravel.apiToken
 };
 
 /**

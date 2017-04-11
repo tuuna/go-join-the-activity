@@ -15,7 +15,8 @@ class Sponsor extends Model
         'is_locked','has_passed','password'
     ];
 
-    /*protected $hidden = [
-        'password'
-    ];*/
+    public function followers()
+    {
+        return $this->belongsToMany(User::class,'sponsor_user');
+    }
 }

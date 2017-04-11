@@ -5,6 +5,7 @@
     ?>
     <link href="{{ asset('css/sponsor_list.css') }}" rel="stylesheet">
 <div class="jianbian"></div>
+
 <div class="container">
     <ul class="list">
         @foreach($sponsorLists as $list)
@@ -12,7 +13,9 @@
             <img src="{{ asset('upload/sponsorUpload/'.$list['sponsor_icon']) }}" class="logo" alt="主办方图标" />
             <a href="{{ url('sponsorinfo/'.$list['id']) }}">{{ $list['sponsor_name'] }}</a>
             <span>{{ $list['follow_count'] }}人关注</span>
-            <button>关注</button>
+            <div id="app">
+                <sponsor-follow-button sponsor="{{ $list['id'] }}"></sponsor-follow-button>
+            </div>
         </li>
         @endforeach
     </ul>

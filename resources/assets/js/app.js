@@ -6,7 +6,6 @@
  */
 
 require('./bootstrap');
-require('./qrcode.min');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -15,6 +14,7 @@ require('./qrcode.min');
  */
 
 Vue.component('example', require('./components/Example.vue'));
+Vue.component('sponsor-follow-button', require('./components/SponsorFollowButton.vue'));
 
 const app = new Vue({
     el: '#app'

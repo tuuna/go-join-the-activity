@@ -28,4 +28,19 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function FollowSponsors()
+    {
+        return $this->belongsToMany(Sponsor::class,'sponsor_user');
+    }
+
+    public function followThisSponsor($sponsor)
+    {
+        return $this->FollowSponsors()->toggle($sponsor);
+    }
+
+    public function hasFollowed($sponsor)
+    {
+        return !! $this->FollowSponsors()->where('sponsor_id',$sponsor)->count();
+    }
+
 }

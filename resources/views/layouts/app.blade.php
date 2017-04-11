@@ -18,13 +18,15 @@
         window.Laravel = {!! json_encode([
             'csrfToken' => csrf_token(),
         ]) !!};
+        Laravel.apiToken = "{{ Auth::check() ? 'Bearer '.Auth::user()->api_token : 'Bearer ' }}";
     </script>
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+
 </head>
 <body>
 <!-- 导航 -->
     <header>
+
         <nav class="navigation">
             <div>
                 <label for="search">信大活动</label>
@@ -92,6 +94,6 @@
         </div>
     </div>
 </footer>
-
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
