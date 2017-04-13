@@ -65,3 +65,9 @@ Route::get('email/verify/{token}',[
  */
 
 Route::post('sponsor/apply','SponsorApplyController@index');
+
+/**
+ * 活动申请
+ */
+
+Route::post('activity/apply','ActivityApplyController@index');

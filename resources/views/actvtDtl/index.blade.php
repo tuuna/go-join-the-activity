@@ -4,6 +4,13 @@
         $this->title = '详情';
     ?>
     <link href="{{ asset('css/actvt_dtl.css') }}" rel="stylesheet">
+    @if (session()->has('flash_notification.message'))
+        <div class="alert alert-{{ session('flash_notification.level') }}">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+
+            <center>{!! session('flash_notification.message') !!}</center>
+        </div>
+    @endif
     <div class="activityDetail-main">
         <div class="activity-top">
             <div class="activity-img">
@@ -24,24 +31,26 @@
         </div>
         <div class="signup-form">
             <h1 class="form-title">报名表单</h1>
-            <form action="">
+            <form action="{{ url('/activity/apply') }}" method="post">
+                {{ csrf_field() }}
                 <div class="form-content">
                     <div class="input-wrap">
                         <label for="user-name">姓名</label>
-                        <input type="text" id="user-name">
+                        <input type="text" id="user-name" name="name">
                     </div>
                     <div class="input-wrap">
                         <label for="user-phone">手机号</label>
-                        <input type="text" id="user-phone">
+                        <input type="text" id="user-phone" name="phone_number">
                     </div>
                     <div class="input-wrap">
                         <label for="user-email">邮箱</label>
-                        <input type="email" id="user-email">
+                        <input type="email" id="user-email" name="email">
                     </div>
                     <div class="input-wrap">
                         <label for="user-stunumber">学号</label>
-                        <input type="text" id="user-stunumber">
+                        <input type="text" id="user-stunumber" name="student_number">
                     </div>
+                    <input type="hidden" value="{{ $activityDetail['main_sponsor']['id'] }}" name="sponsor_id">
                 </div>
                 <div class="form-btns">
                     <button class="form-btn btn-blue" type="submit" id="submit-form-btn">确认提交</button>
