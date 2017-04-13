@@ -3507,21 +3507,7 @@ module.exports = Component.exports
 /* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('button', {
-    staticClass: "btn btn-default",
-    class: {
-      'btn-success': _vm.followed
-    },
-    domProps: {
-      "textContent": _vm._s(_vm.text)
-    },
-    on: {
-      "click": _vm.follow
-    }
-  })
-},staticRenderFns: []}
-module.exports.render._withStripped = true
+module.exports={render:function(){},staticRenderFns:[]}
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
@@ -42688,9 +42674,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['sponsor'],
+    props: ['sponsor', 'count'],
     mounted: function mounted() {
         var _this = this;
 
@@ -42707,6 +42694,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     computed: {
         text: function text() {
             return this.followed ? '已关注' : '关注';
+        },
+        count: function count() {
+            return this.count + '人关注';
         }
     },
     methods: {
@@ -42715,6 +42705,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             this.$http.post('/api/sponsor/follow', { 'sponsor': this.sponsor }).then(function (response) {
                 _this2.followed = response.data.followed;
+                _this2.count = response.data.count;
             });
         }
     }
