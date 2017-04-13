@@ -49,4 +49,9 @@ class Activity extends Model
 
         return $tags;
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class,'activity_user');
+    }
 }

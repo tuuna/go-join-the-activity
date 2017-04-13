@@ -9,10 +9,10 @@
 namespace App\Repositories;
 
 
-use App\Sponsor;
+use App\Activity;
 use Illuminate\Support\Facades\Auth;
 
-class FollowSponsorRepository
+class FollowActivityRepository
 {
     public function getCurrentUserInfo()
     {
@@ -24,8 +24,8 @@ class FollowSponsorRepository
         return response()->json($status);
     }
 
-    public function findCertainSponsor($sponsor)
+    public function findCertainActivity($sponsor)
     {
-        return Sponsor::find($sponsor);
+        return Activity::find($sponsor);
     }
 }

@@ -40,3 +40,9 @@ Route::middleware('api')->get('/tag',
 Route::middleware('auth:api')->post('/sponsor/followers','FollowSponsorController@followStatus');
 
 Route::middleware('auth:api')->post('/sponsor/follow','FollowSponsorController@follow');
+
+Route::middleware('auth:api')->post('/activity/followers','FollowActivityController@followStatus');
+
+Route::middleware('auth:api')->post('/activity/follow','FollowActivityController@follow');
+
+

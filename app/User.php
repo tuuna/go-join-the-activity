@@ -43,4 +43,19 @@ class User extends Authenticatable
         return  $this->FollowSponsors()->where('sponsor_id',$sponsor)->count();
     }
 
+    public function FollowActivities()
+    {
+        return $this->belongsToMany(Activity::class,'activity_user');
+    }
+
+    public function followThisActivity($activity)
+    {
+        return $this->FollowActivities()->toggle($activity);
+    }
+
+    public function hasFollowedActivity($activity)
+    {
+        return $this->FollowActivities()->where('activity_id',$activity)->count();
+    }
+
 }

@@ -20,9 +20,9 @@ class FollowSponsorController extends Controller
             $user = $this->followSponsor->getCurrentUserInfo();
             $followed = $user->hasFollowed($request->get('sponsor'));
             if($followed) {
-                $this->followSponsor->responseToClient(['followed' => true]);
+                return $this->followSponsor->responseToClient(['followed' => true]);
             }
-            $this->followSponsor->responseToClient(['followed' => false]);
+            return $this->followSponsor->responseToClient(['followed' => false]);
     }
 
     public function follow(Request $request)
@@ -32,9 +32,9 @@ class FollowSponsorController extends Controller
         $followed = $user->followThisSponsor($sponsor->id);
         if(count($followed['detached']) > 0) {
             $sponsor->decrement('follow_count');
-            $this->followSponsor->responseToClient(['followed' => false]);
+            return $this->followSponsor->responseToClient(['followed' => false]);
         }
         $sponsor->increment('follow_count');
-        $this->followSponsor->responseToClient(['followed' => true]);
+        return $this->followSponsor->responseToClient(['followed' => true]);
     }
 }

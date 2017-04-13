@@ -20,7 +20,7 @@ class SponsorInfoRepository
         $activityCount = Activity::where('sponsor_id',$id)->count();
         $sponsorInfo = Sponsor::select([
             'sponsor_name','sponsor_icon','description',
-            'weixin','follow_count'
+            'weixin','follow_count','id'
         ])->where('id',$id)->first()->toArray();
         $sponsorInfo = array_add($sponsorInfo,'count',$activityCount);
         return $sponsorInfo;

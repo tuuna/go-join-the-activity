@@ -15,6 +15,7 @@ require('./bootstrap');
 
 Vue.component('example', require('./components/Example.vue'));
 Vue.component('sponsor-follow-button', require('./components/SponsorFollowButton.vue'));
+Vue.component('activity-follow-button', require('./components/ActivityFollowButton.vue'));
 
 const app = new Vue({
     el: '#app'

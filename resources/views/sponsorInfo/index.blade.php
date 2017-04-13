@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.vue')
 @section('content')
     <?php
     $this->title = '主办方中心';
@@ -20,7 +20,7 @@
                 <b class="nummid rightnum"><span class="num">{{ $sponsorInfo['follow_count'] }} </span> 粉丝</b>
             </div>
             <div class="button">
-                <button class="guanzhu buttonblue">关注</button>
+                <sponsor-follow-button sponsor=" {{ $sponsorInfo['id'] }} "></sponsor-follow-button>
                 <button class="fenxiang buttonwrite pull-right">分享</button>
             </div>
             <p>{{ $sponsorInfo['description'] }}</p>
@@ -56,7 +56,7 @@
                     </div>
                     <div class="active-button">
                         <button class="xiangqing buttonblue"><a href="{{ url('detail/'.$info['id']) }}" style="color: white;text-decoration: none;">查看详情</a></button>
-                        <button class="shoucang buttonwrite">收藏</button>
+                        <activity-follow-button activity="{{ $info['id'] }}"></activity-follow-button>
                     </div>
                 </div>
             </li>

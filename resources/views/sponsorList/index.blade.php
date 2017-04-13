@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.vue')
 @section('content')
     <?php
     $this->title = '主办方列表';
@@ -10,7 +10,7 @@
     <ul class="list">
         @foreach($sponsorLists as $list)
         <li>
-            <img src="{{ asset('upload/sponsorUpload/'.$list['sponsor_icon']) }}" class="logo" alt="主办方图标" />
+            <img src="{{ asset('upload/sponsorUpload/'.$list['sponsor_icon']) }}" class="logo" alt="主办方图标" href="{{ url('sponsorinfo/'.$list['id']) }}"/>
             <a href="{{ url('sponsorinfo/'.$list['id']) }}">{{ $list['sponsor_name'] }}</a>
             <span>{{ $list['follow_count'] }}人关注</span>
             @if(Auth::check())
