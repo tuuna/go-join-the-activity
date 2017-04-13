@@ -13,9 +13,10 @@
             <img src="{{ asset('upload/sponsorUpload/'.$list['sponsor_icon']) }}" class="logo" alt="主办方图标" />
             <a href="{{ url('sponsorinfo/'.$list['id']) }}">{{ $list['sponsor_name'] }}</a>
             <span>{{ $list['follow_count'] }}人关注</span>
-            <div id="app">
+            @if(Auth::check())
                 <sponsor-follow-button sponsor="{{ $list['id'] }}"></sponsor-follow-button>
-            </div>
+            @else
+            @endif
         </li>
         @endforeach
     </ul>

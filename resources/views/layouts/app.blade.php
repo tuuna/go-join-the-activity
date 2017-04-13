@@ -25,6 +25,7 @@
 </head>
 <body>
 <!-- 导航 -->
+<div id="app">
     <header>
 
         <nav class="navigation">
@@ -94,6 +95,7 @@
         </div>
     </div>
 </footer>
+</div>
 <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

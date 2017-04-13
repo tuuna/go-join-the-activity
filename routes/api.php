@@ -37,24 +37,6 @@ Route::middleware('api')->get('/tag',
         return $sponsors;
     });
 
-Route::middleware('api')->post('/sponsor/followers',
-    function (Request $request) {
-        $user = Auth::guard('api')->user();
-        $followed = $user->hasFollowed($request->get('sponsor'));
-        if($followed) {
-            return response()->json(['followed' => true]);
-        }
-        return response()->json(['followed' => false]);
-    });
+Route::middleware('auth:api')->post('/sponsor/followers','FollowSponsorController@followStatus');
 
-Route::middleware('auth:api')->post('/sponsor/follow',function(Request $request) {
-    $user = Auth::guard('api')->user();
-    $sponsor = Sponsor::find($request->get('sponsor'));
-    $followed = $user->followThisSponsor($sponsor->id);
-    if(count($followed['detached']) > 0) {
-        $sponsor->decrement('follow_count');
-        return response()->json(['followed' => false]);
-    }
-    $sponsor->increment('follow_count');
-    return response()->json(['followed' => true]);
-});
+Route::middleware('auth:api')->post('/sponsor/follow','FollowSponsorController@follow');

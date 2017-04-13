@@ -30,7 +30,7 @@ class User extends Authenticatable
 
     public function FollowSponsors()
     {
-        return $this->belongsToMany(Sponsor::class,'sponsor_user');
+        return $this->belongsToMany(Sponsor::class,'sponsor_user','user_id','sponsor_id');
     }
 
     public function followThisSponsor($sponsor)
@@ -40,7 +40,7 @@ class User extends Authenticatable
 
     public function hasFollowed($sponsor)
     {
-        return !! $this->FollowSponsors()->where('sponsor_id',$sponsor)->count();
+        return  $this->FollowSponsors()->where('sponsor_id',$sponsor)->count();
     }
 
 }

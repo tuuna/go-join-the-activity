@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repositories\SponsorListRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SponsorListController extends Controller
 {
