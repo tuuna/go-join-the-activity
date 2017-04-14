@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repositories\ActivityApplyRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ActivityApplyController extends Controller
 {
@@ -22,7 +23,8 @@ class ActivityApplyController extends Controller
             'phone_number' => $request->get('phone_number'),
             'email' => $request->get('email'),
             'student_number' => $request->get('student_number'),
-            'sponsor_id' => $request->get('sponsor_id')
+            'sponsor_id' => $request->get('sponsor_id'),
+            'user_id' => Auth::id()
         ]) ? flash('报名成功，请等待邮件通知','success') :
              flash('报名失败，请重试','warning');
         return back();

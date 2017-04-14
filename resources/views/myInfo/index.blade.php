@@ -23,12 +23,9 @@
                 <button class="set-myinfo">账户资料设置</button>
             </div>
             <div class="my-tabbar">
-                <div class="tab tab-active">
-                    <p class="tab-title ">我发布的活动 <span id="release-act-num">8</span></p>
 
-                </div>
-                <div class="tab" >
-                    <p class="tab-title">我参与的活动 <span id="join-act-num">0</span></p>
+                <div class="tab tab-active" >
+                    <p class="tab-title">我报名的活动 <span id="join-act-num">0</span></p>
 
                 </div>
                 <div class="tab" >
@@ -220,8 +217,30 @@
                     </div>
                 </div>
             </section>
-            <section class="section">2222</section>
-            <section class="section">3333</section>
+            {{--我收藏的活动样式乱掉的--}}
+            <section class="section">
+                <div class="activity-item">
+                    <a href="#!" class="top-img">
+                        <img src="img/Group.png" alt="huodong">
+                    </a>
+                    <div class="bottom-info">
+                        <a href="#!" class="info-title">南信大最炫千人城市夜跑活动</a>
+                        <div class="info-msg">
+
+                            <p> <img src="img/calendaricon.svg" />2016-11-22(二) 09:30~12:30</p>
+
+                        </div>
+                        <div class="info-msg">
+
+                            <p><img src="img/addressicon.svg" />明德楼门口</p>
+
+                        </div>
+                        <div class="info-msg">
+                            <p><img src="img/sponsoricon.svg" />多火工作室</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <section class="section-my-sponsor section">
 
                 <div>

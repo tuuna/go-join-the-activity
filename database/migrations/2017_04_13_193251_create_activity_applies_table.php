@@ -20,6 +20,7 @@ class CreateActivityAppliesTable extends Migration
             $table->string('email',100)->comment('邮箱');
             $table->string('student_number',100)->comment('学号');
             $table->integer('sponsor_id')->unsigned()->index();
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
         });
     }

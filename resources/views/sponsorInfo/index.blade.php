@@ -48,7 +48,7 @@
                 <div class="active-s">
                     <p class="active-tit">{{ $info['title'] }}</p>
                     <p class="active-time"><embed class="icon" src="{{ asset('img/time.svg') }}" type="image/svg+xml" /> 时间：{{ $info['hold_time'] }}</p>
-                    <p class="active-plc"><img class="icon" src="{{ asset('img/plc.png') }}"> 地址：{{ $info['hold_address'] }}</p>
+                    <p class="active-plc"><img class="icon" src="{{ asset('img/adressicon.svg') }}"> 地址：{{ $info['hold_address'] }}</p>
                     <div class="active-num">
                         <b class="num-left">报名人数：{{ $info['signUp_count'] }}</b>
                         <div class="active-line"></div>

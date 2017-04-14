@@ -20,5 +20,6 @@ Route::group([
     $router->resource('changepass', SponsorChangePassController::class);
     $router->resource('managesponsor', SponsorActivityController::class);
     $router->resource('acmanage', AdminActivityController::class);
+    $router->resource('activity/apply',UserApplyController::class);
 
 });

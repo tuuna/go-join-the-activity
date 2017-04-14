@@ -58,4 +58,9 @@ class User extends Authenticatable
         return $this->FollowActivities()->where('activity_id',$activity)->count();
     }
 
+    public function activity_applies()
+    {
+        return $this->hasMany(ActivityApply::class);
+    }
+
 }
