@@ -59,4 +59,9 @@ class Activity extends Model
     {
         return $this->belongsTo(ActivityApply::class);
     }
+
+    public function sponsor()
+    {
+        return $this->belongsTo(Sponsor::class);
+    }
 }

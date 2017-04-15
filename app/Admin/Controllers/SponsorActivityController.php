@@ -52,8 +52,8 @@ class SponsorActivityController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('header');
-            $content->description('description');
+            $content->header('活动编辑');
+            $content->description('修改活动相关信息');
 
             $content->body($this->form()->edit($id));
         });
@@ -130,4 +130,6 @@ class SponsorActivityController extends Controller
             $form->hidden('sponsor_id')->value($sponsor_id);
         });
     }
+
+
 }

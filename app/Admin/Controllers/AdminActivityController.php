@@ -5,6 +5,7 @@ namespace App\Admin\Controllers;
 use App\Activity;
 
 use App\Category;
+use App\Sponsor;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Facades\Admin;
@@ -77,11 +78,21 @@ class AdminActivityController extends Controller
             $grid->id('ID')->sortable();
             $grid->disableCreation();
             $grid->column('title','活动标题');
+            $grid->column('sponsor.sponsor_name','主办方');
             $grid->column('hold_time','举办时间');
             $grid->column('hold_address','活动时间');
             $grid->category()->title('所属分类');
+            $grid->othersponsors()->value(function(array $sponsorId) {
+                if($sponsorId[0] == null) {
+                    return "<span class='label label-warning'>无其它举办方</span>";
+                }
+                $sponsors = array_map(function ($sponsor) {
+                    $sponsor_name = Sponsor::where('id',$sponsor)->first()->sponsor_name;
+                    return "<span class='label label-success'>{$sponsor_name}</span>";
+                }, $sponsorId);
+                return join('&nbsp;', $sponsors);
+            });
             $grid->created_at();
-            $grid->updated_at();
         });
     }
 

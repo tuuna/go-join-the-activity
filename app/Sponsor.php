@@ -19,4 +19,9 @@ class Sponsor extends Model
     {
         return $this->belongsToMany(User::class,'sponsor_user');
     }
+
+    public function activity()
+    {
+        return $this->belongsTo(Activity::class);
+    }
 }

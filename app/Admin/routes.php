@@ -22,4 +22,6 @@ Route::group([
     $router->resource('acmanage', AdminActivityController::class);
     $router->resource('activity/apply',UserApplyController::class);
     $router->get('activity/{activity}/apply/check/{id}/email/{email}/','UserApplyController@pass');
+    $router->resource('activity/calculate',ActivityCalculateController::class);
+    $router->resource('activity/all/calculate',AdminActivityCalculateController::class);
 });

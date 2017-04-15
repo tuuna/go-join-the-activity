@@ -100,6 +100,8 @@ class UserApplyController extends Controller
             $grid->column('email','邮件');
             $grid->column('phone_number','电话号码');
             $grid->created_at('申请时间');
+            $grid->disableCreation();
+            $grid->disableExport();
             $grid->actions(function ($actions) {
                 $actions->disableEdit();
                 $id = $actions->getKey();
