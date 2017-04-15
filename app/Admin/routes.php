@@ -21,5 +21,5 @@ Route::group([
     $router->resource('managesponsor', SponsorActivityController::class);
     $router->resource('acmanage', AdminActivityController::class);
     $router->resource('activity/apply',UserApplyController::class);
-
+    $router->get('activity/{activity}/apply/check/{id}/email/{email}/','UserApplyController@pass');
 });

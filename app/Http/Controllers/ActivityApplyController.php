@@ -16,7 +16,7 @@ class ActivityApplyController extends Controller
         $this->apply = $apply;
     }
 
-    public function index(Request $request)
+    public function index(Request $request,$id)
     {
         $this->apply->create([
             'name' => $request->get('name'),
@@ -24,7 +24,8 @@ class ActivityApplyController extends Controller
             'email' => $request->get('email'),
             'student_number' => $request->get('student_number'),
             'sponsor_id' => $request->get('sponsor_id'),
-            'user_id' => Auth::id()
+            'user_id' => Auth::id(),
+            'activity_id' => $id
         ]) ? flash('报名成功，请等待邮件通知','success') :
              flash('报名失败，请重试','warning');
         return back();

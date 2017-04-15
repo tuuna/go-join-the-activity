@@ -31,7 +31,7 @@
         </div>
         <div class="signup-form">
             <h1 class="form-title">报名表单</h1>
-            <form action="{{ url('/activity/apply') }}" method="post">
+            <form action="{{ url('/activity/apply/'.$activityDetail['id']) }}" method="post">
                 {{ csrf_field() }}
                 <div class="form-content">
                     <div class="input-wrap">

@@ -70,4 +70,4 @@ Route::post('sponsor/apply','SponsorApplyController@index');
  * 活动申请
  */
 
-Route::post('activity/apply','ActivityApplyController@index');
+Route::post('activity/apply/{id}','ActivityApplyController@index');

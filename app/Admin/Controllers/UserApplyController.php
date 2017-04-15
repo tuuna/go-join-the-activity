@@ -4,6 +4,8 @@ namespace App\Admin\Controllers;
 
 use App\ActivityApply;
 
+use App\Mail\UserApplyMailer;
+use App\Repositories\ActivityPassRepository;
 use App\Sponsor;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -16,6 +18,15 @@ use Illuminate\Support\Facades\Auth;
 class UserApplyController extends Controller
 {
     use ModelForm;
+    protected $activity;
+    protected $mail;
+
+    public function __construct(ActivityPassRepository $activity,
+                                UserApplyMailer $mail)
+    {
+        $this->activity = $activity;
+        $this->mail = $mail;
+    }
 
     /**
      * Index interface.
@@ -75,20 +86,28 @@ class UserApplyController extends Controller
     }
 
     /**
-     * Make a grid builder.
-     *
-     * @return Grid
+     * @param $sponsor
+     * @return mixed
      */
     protected function grid($sponsor)
     {
         return Admin::grid(ActivityApply::class, function (Grid $grid) use($sponsor){
             $grid->model()->where('sponsor_id',$sponsor);
+            $grid->model()->where('has_passed','=',0);
             $grid->model()->orderBy('created_at');
-            $grid->user()->
-            $grid->column('name','姓名');
+            $grid->column('activity.title','活动名');
+            $grid->column('name','报名者姓名');
             $grid->column('email','邮件');
             $grid->column('phone_number','电话号码');
-            $grid->created_at();
+            $grid->created_at('申请时间');
+            $grid->actions(function ($actions) {
+                $actions->disableEdit();
+                $id = $actions->getKey();
+                $email = ActivityApply::find($id)->first()->email;
+                $activity = ActivityApply::find($id)->first()->activity_id;
+                $checkPath = url('admin/activity/'.$activity.'/apply/check/'.$id.'/email/'.$email);
+                $actions->prepend("<a href='$checkPath'><i class='fa fa-paper-plane'>通过</i></a>");
+            });
         });
     }
 
@@ -106,5 +125,21 @@ class UserApplyController extends Controller
             $form->display('created_at', 'Created At');
             $form->display('updated_at', 'Updated At');
         });
+    }
+
+    /**
+     * @param $activity
+     * @param $id
+     * @param $email
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function pass($activity,$id,$email)
+    {
+        $this->activity->passTheActivity($id) ?
+            flash('审核通过','success') :
+            flash('审核失败，请重试','danger');
+        $data = $this->activity->getActivityInfo($activity,$id,$email);
+        $this->mail->sendActivityInfo($data);
+        return back();
     }
 }

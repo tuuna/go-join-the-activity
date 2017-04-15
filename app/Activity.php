@@ -54,4 +54,9 @@ class Activity extends Model
     {
         return $this->belongsToMany(User::class,'activity_user');
     }
+
+    public function apply()
+    {
+        return $this->belongsTo(ActivityApply::class);
+    }
 }
