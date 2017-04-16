@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f2d59380a0040905e0491b3b3d2d20cf",
-    "content-hash": "9d92aedb7fd9130d5f659fb1bd2fe39e",
+    "hash": "fe34fd4d92a182cb3a7cfad2a59b202e",
+    "content-hash": "6edbbafa52e432e424782931022f1f3b",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -1261,6 +1261,46 @@
                 "uuid"
             ],
             "time": "2017-03-26 20:37:53"
+        },
+        {
+            "name": "shaozeming/xunsearch-laravel",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ShaoZeMing/xunsearch-laravel.git",
+                "reference": "539bf90b8003f699de4f3f4ed23e532ae2dde6d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/ShaoZeMing/xunsearch-laravel/539bf90b8003f699de4f3f4ed23e532ae2dde6d9.zip",
+                "reference": "539bf90b8003f699de4f3f4ed23e532ae2dde6d9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "shaozeming\\xunsearch\\": "src/wrapper"
+                },
+                "classmap": [
+                    "src/lib/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "shaozeming",
+                    "email": "szm19920426@gmail.com",
+                    "homepage": "http://www.4d4k.com"
+                }
+            ],
+            "description": "基于XunSearch（讯搜）sdk的全文搜索Laravel 5.*,Yii1/2,...包，支持全拼，拼音简写，模糊,同义词搜索。支持所有的框架",
+            "time": "2017-03-03 02:59:10"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -3675,7 +3715,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "shaozeming/xunsearch-laravel": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

@@ -19,9 +19,16 @@ class ActivityPassRepository
         return Activity::where('id', $id)->first();
     }
 
+    public function findInfo($id)
+    {
+        return Activity::find($id);
+    }
+
     public function passTheActivity($id)
     {
-        return ActivityApply::where('id',$id)->update(['has_passed' => 1]);
+        ActivityApply::where('id',$id)->update(['has_passed' => 1]) ?
+            $this->findInfo($id)->increment('signUp_count') :
+            0;
     }
 
     public function getUserInfo($id)
