@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Elasticquent\ElasticquentTrait;
 
 class Activity extends Model
 {
+    use ElasticquentTrait;
+
     protected $fillable = [
         'category_id','sponsor_id',
         'title','pic','hold_time','contain_count',

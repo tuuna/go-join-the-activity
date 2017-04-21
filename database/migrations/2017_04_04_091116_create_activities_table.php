@@ -32,6 +32,7 @@ class CreateActivitiesTable extends Migration
             $table->text('activity_background')->comment('活动背景介绍');
             $table->text('guest_intro')->comment('嘉宾介绍_宣讲人');
             $table->text('activity_agenda')->comment('活动议程_内容简述');
+            $table->tinyInteger('deadline',1)->default(0)->comment('活动是否过期');
             $table->timestamps();
         });
     }
