@@ -71,3 +71,22 @@ Route::post('sponsor/apply','SponsorApplyController@index');
  */
 
 Route::post('activity/apply/{id}','ActivityApplyController@index');
+
+/**
+ * 意见反馈
+ */
+
+Route::get('feedback/{id}','FeedBackController@index');
+
+/**
+ * 各分类对应活动列表
+ */
+
+Route::get('catelist/{id}','CateListDetailController@index');
+
+/**
+ * 话题页面
+ */
+
+Route::get('topic','TopicController@index');
+

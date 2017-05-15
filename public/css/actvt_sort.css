@@ -28,7 +28,7 @@ nav {
 nav div:first-child {
   padding-left: 20px;
   float: left;
-  background-image: url(../../img/logo.png);
+  background-image: url(/img/logo.png);
   background-repeat: no-repeat;
   background-position: left center;
 }
@@ -48,6 +48,7 @@ nav div:first-child input {
 #banner {
   height: 600px;
   background-image: url(../../img/banner1.png);
+  background-size: 100% 100%;
 }
 
 article>div {

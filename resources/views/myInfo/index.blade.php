@@ -258,10 +258,6 @@
                                         <p>LOGO</p>
                                         <p>300*300px</p>
                                     </div>
-                                    <div>
-
-                                    </div>
-
                                     <div class="btn-wrap">
                                         <div class="btn-blue upload-btn">
                                             <input id="sponsor_icon" name="sponsor_icon" type="file" class="inputfile">
@@ -355,23 +351,39 @@
             </section>
         </div>
     </div>
-    <script src="{{ asset('js/me.js') }}"></script>
-    <script>
-        $(function() {
-            $("#sponsor_icon").on("change","input[type='file']",function(){
-                var filePath=$(this).val();
-                if(filePath.indexOf("jpg")!=-1 || filePath.indexOf("png")!=-1){
-                    $(".fileerrorTip").html("").hide();
-                    var arr=filePath.split('\\');
-                    var fileName=arr[arr.length-1];
-                    $(".showFileName").html(fileName);
-                }else{
-                    $(".showFileName").html("");
-                    $(".fileerrorTip").html("您未上传文件，或者您上传文件类型有误！").show();
-                    return false
-                }
-            })
-        });
+    <div class="setting">
+        <div class="setting-title">账户资料设置<span><a href="javascript:void(0);" class="close-login">X</a></span></div>
+        <div class="form_group_lg avatar">
+            <label for="avatar">个人头像</label>
+            <img src="../../img/mylogo.png" alt="#">
+            <div class="wordBtn">
+                <p>上传的头像会自动生成头像缩略图，您也可以拖动大图的裁减区域，调整缩图内容。<br />
+                    支持JPG、GIF、PNG等图片格式<br/>
+                    推荐尺寸：160*160像素</p>
+                <button class="btn-white upload">上传头像</button>
+                <button class="btn-blue">保存</button>
+            </div>
+        </div>
+        <div class="form_group">
+            <label for="nickname">昵称</label>
+            <input type="text">
+        </div>
+        <div class="form_group">
+            <label for="email">邮箱</label>
+            <input type="text">
+        </div>
+        <div class="form_group">
+            <label for="motto">签名</label>
+            <input type="text">
+        </div>
+        <div class="form_group security">
+            <label for="security">安全验证</label>
+            <img src="../../img/验证码.png" alt="#">
+            <input type="text">
+        </div>
+        <button class="btn-blue setting_submit" id="setting-submit">确认修改</button>
+    </div>
 
-    </script>
+    <div class="setting-bg"></div>
+    <script src="{{ asset('js/me.js') }}"></script>
 @endsection
