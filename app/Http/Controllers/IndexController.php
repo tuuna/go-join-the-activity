@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class IndexController extends Controller
 {
@@ -12,5 +13,11 @@ class IndexController extends Controller
     public function index()
     {
         return view('home.index');
+    }
+
+    public function userLogout()
+    {
+        Auth::logout();
+        return redirect('/');
     }
 }

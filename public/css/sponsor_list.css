@@ -43,6 +43,7 @@ li>button{
 	width: 160px;
 	height: 160px;
 	border: 1px solid #D1D1D1;
+	background-image:url(../../img/多火logo.png);
 	background-size: 160px 160px;
 	background-position:4px 0px;
 }

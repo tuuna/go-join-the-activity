@@ -1,24 +1,189 @@
-﻿.buttonblue{
-	width: 110px;
-	height: 40px;
-	font-size: 16px;
-	color: #FFFFFF;
-	background: #4EA1E7;
-	border: 1px solid #4EA1E7;
-	border-radius: 4px;
-	cursor:pointer;
+.bgimg_banner{
+	height: 300px;
+	background-image: url(../../img/banner.png);
+	background-size: 100% 100%;
 }
-.buttonwrite{
-	width: 110px;
-	height: 40px;
-	font-size: 16px;
+
+.container_left{
+	width: 280px;
+	float: left;
+}
+
+.sponsor_info_box{
+	width: 100%;
+	padding: 20px;
+	background-color: #fff;
+	border: 1px solid #D1D1D1;
+	text-align: center;
+}
+
+.sponsor_info_box h3{
+	font-size: 24px;
+	color: #4A4A4A;
+	margin: 26px auto;
+}
+
+.sponsor_logo{
+	width: 240px;
+	height: 240px;
+	border: 1px solid #D1D1D1;
+}
+
+.sponsor_a{
+	width: 100%;
+	max-width: 240px;
+	white-space:nowrap;
+}
+
+.sponsor_a span{
+	width: 49%;
+}
+
+.sponsor_a span a{
 	color: #4EA1E7;
-	background: #FFFFFF;
-	border: 1px solid #4EA1E7;
-	border-radius: 4px;
-	cursor:pointer;
+	margin: 7%;
 }
-.buttongray{
+
+.sponsor_a .span_border{
+	border-right: 1px solid #4EA1E7;
+	padding-right: 8%;
+}
+
+.focus_share{
+	width: 100%;
+	margin: 27px 0 24px 0;
+}
+
+.focus,.unfocus,.share{
+	width: 110px;
+	height: 40px;
+	display: inline-block;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+.unfocus{
+	display: none;
+}
+
+.focus{
+	margin-right: 10px;
+}
+
+.share{
+	margin-right: 0px;
+}
+
+.sponsor_intro{
+	font-size: 14px;
+}
+
+.other_info{
+	width: 100%;
+	height: 150px;
+	margin-top: 37px;
+}
+
+.other_info img{
+	width: 140px;
+	height: 140px;
+	float: left;
+	margin-right: 12px;
+}
+
+.container_right{
+	width: 880px;
+	float: right;
+}
+
+.actvt_box{
+	width: 100%;
+	height: 240px;
+	margin: 0 0 40px 0;
+}
+
+.actvt_box img{
+	width: 480px;
+	height: 240px;
+	float: left;
+}
+
+.actvt_box .actvt_dtl{
+	width: 400px;
+	float: left;
+	padding: 20px;
+}
+
+.actvt_box .actvt_dtl p{
+	color: #5A5A5A;
+}
+
+.dtl_title {
+    font-size: 24px;
+    margin-bottom: 9px;
+}
+
+.icon{
+	height: 19px;
+	width: 19px;
+	display: inline-block;
+	position: relative;
+    margin-right: 7px;
+    top: 3px;
+	background-size: 100% 100%;
+}
+
+.actvt_time,.actvt_place{
+    font-size: 18px;
+}
+
+.actvt_time{
+    margin-bottom: 9px;
+}
+
+.actvt_place{
+	margin-bottom: 18px;
+}
+
+.actvt_people{
+	width: 100%;
+	margin-bottom: 18px;
+}
+
+.actvt_people p{
+	display: inline-block;
+	width: 49%;
+	white-space: nowrap;
+	font-size: 18px;
+}
+
+.actvt_people p span{
+	margin-right: 6px;
+}
+
+.actvt_people .number{
+	margin: 0 7px;
+}
+
+.actvt_people .border_left{
+	border-left: 2px solid #4EA1E7;
+    padding-left: 25px;
+}
+
+.check_star button{
+	height: 40px;
+	width: 110px;
+	display: inline-block;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+.page_btn{
+	width: 100%;
+	text-align: center;
+}
+
+.page_btn button{
 	width: 60px;
 	height: 40px;
 	font-size: 16px;
@@ -26,196 +191,40 @@
 	border-radius: 4px;
 	background: #D1D1D1;
 	border: 0 solid #D1D1D1;
-	cursor:pointer;
-}
-.num{
-	color: #4EA1E7;
-}
-.nummid{
-	display:line-block;
-	position: absolute;
-	width: 138px;
-	height: 20px;
-	line-height: 20px;
-	text-align: center;
-}
-.banner{
-	width: 100%;
-	height: 300px;
-	background-image: url(/img/banner.png);
-	background-repeat: no-repeat;
-	margin-bottom: 40px;
-}
-.container{
-	width: 1180px;
-	height: 1200px;
-	margin: 0 auto;
-	font-family: PingFangSC-Regular;
-	color: #5A5A5A;
-    background:#FFFFFF;
-}
-.left{
-	width: 280px;
-	height: 1200px;
-	float: left;
-}
-.right{
-	width: 880px;
-	height: 1200px;
-	float: right;
-}
-.introduce{
-	width: 280px;
-	height: 530px;
-	border: 1px solid #D1D1D1;
-}
-.logo{
-	width: 240px;
-	height: 240px;
-	background-size: 240px 240px;
-	background-position:6px 0px;
-	border: 1px solid #D1D1D1;
-	margin: 19px 19px 26px;
-}
-.name{
-	display: block;
-	text-align: center;
-	font-size: 24px;
-	margin-bottom: 23px;
-}
-.numcont{
-	width: 280px;
-	height: 20px;
-	position: relative;
-}
-.leftnum{
-	left:0px;
-}
-.rightnum{
-	left:140px;
-}
-.line{
-	position: absolute;
-	left: 139px;
 	display: inline-block;
-	width: 1px;
-	height: 20px;
+	cursor:pointer;
+	margin: 0 20px;
+}
+
+.page_btn button:hover{
 	background: #4EA1E7;
-}
-.button{
-	width: 240px;
-	height: 40px;
-	margin:25px 19px 0px;
-}
-.fenxiang{
-	margin-left: 15px;
-}
-.introduce>p{
-	width: 240px;
-	height: 60px;
-	margin: 23px 19px 18px;
-	font-size: 14px;
-	letter-spacing: 0;
-}
-.leftdown{
-	width: 280px;
-	height: 140px;
-	margin-top: 30px;
-}
-.leftdown>ul{
-	width: 101px;
-	height: 120px;
-	list-style: none;
-	font-size: 16px;
-	margin: 15px 0px 0px 20px;
-	float: left;
-}
-.leftdown .ma{
-	width: 140px;
-	height: 140px;
-	float: left;
+	color: #fff;
+	box-shadow: 0px 2px 2px 1px #D1D1D1;
 }
 
-
-.right>ul{
-	width: 880px;
-	height:1120px;
-}
-.right>ul li{
-	list-style: none;
-	width: 880px;
-	height: 240px;
-	margin-bottom: 40px;
-}
-.active-pic{
-	width: 480px;
-	height: 240px;
-	float: left;
-	background-image: url(/img/Group4.png);
-	background-size:100% 100%;
-}
-.active-s{
-	width: 360px;
-	height: 240px;
-	padding: 20px;
-	float: left;
-	background: #FFFFFF;
-}
-.active-tit{
-	font-size: 24px;
-}
-.active-time,.active-plc{
-	font-size: 18px;
-}
-.active-time,.active-plc,.active-tit{
-	margin-bottom: 12px;
-}
-.icon{
-	transform:translateY(2px);
-}
-.active-num{
-	font-size: 18px;
-	position: relative;
-	height: 25px;
-	width: 400px;
-}
-.active-line{
-	width: 2px;
-	height: 16px;
-	background: #4EA1E7;
-	left: 150px;
-	transform:translateY(5px);
-}
-.active-num>a,.active-line{
-	position: absolute;
-}
-.num-left{
-	left: 0px;
-}
-.num-right{
-	left: 187px;
-}
-.xiangqing{
-	margin-right: 20px;
-}
-.active-button{
-	width: 400px;
-	height: 40px;
-	margin-top: 20px;
+.page_num{
+	display: inline-block;
 }
 
-.page-num{
-	width: 280px;
-	height: 40px;
-	margin: 0px auto 40px;
-}
-.but-1,.but-2{
+.page_num li{
 	width: 40px;
 	height: 40px;
+	margin: 0 10px;
+	display: inline-block;
+	font-size: 16px;
+	color: #4EA1E7;
+	background: #FFFFFF;
+	border: 1px solid #4EA1E7;
+	border-radius: 4px;
+	cursor:pointer;
+	line-height: 40px;
 }
-.but-1{
-	margin:0 19px 0 22px;
+
+.page_num .active{
+	background: #4EA1E7;
+	color: #fff;
 }
-.but-2{
-	margin-right: 22px;
+
+.page_num a{
+	color: inherit;
 }

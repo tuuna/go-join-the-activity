@@ -17,7 +17,6 @@ var showSection=function(){
 }
 
 function changeTab(){
-    
     for(var i=0;i<tab_btns.length;i++){
         tab_btns[i].addEventListener('click',showSection)
     }
@@ -35,6 +34,34 @@ document.querySelector("#cancle-addsponsor").onclick=function(){
     toggleHidden(document.querySelector('.add-sponsor-form'));
 }
 
-$(function(){
-    changeTab();
-})
+changeTab();
+
+
+var H_setInfo = {};
+H_setInfo.openSetting = function(){
+  $('.set-myinfo').click(function(){
+    $('.setting').show();
+    $('.setting-bg').show();
+  });
+};
+H_setInfo.closeSetting = function(){
+  $('.close-login').click(function(){
+    $('.setting').hide();
+    $('.setting-bg').hide();
+  });
+};
+H_setInfo.settingForm = function () {
+  $("#setting-submit").on('click',function(){
+    alert("修改成功");
+    setTimeout(function(){
+      $('.setting').hide();
+      $('.setting-bg').hide();
+    },2000);
+  });
+};
+H_setInfo.run = function () {
+        this.closeSetting();
+        this.openSetting();
+        this.settingForm();
+};
+H_setInfo.run();

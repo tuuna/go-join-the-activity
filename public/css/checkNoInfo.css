@@ -1,39 +1,92 @@
 article {
-    margin-bottom: 25%;
+  background-color: #f8f8f8;
 }
 article>div {
-	max-width: 1180px;
-	margin: 0 auto;
-	color: #4EA1E7;
+  max-width: 1240px;
+  min-width: 1240px;
+  margin: 0 auto;
 }
 article>div>p {
-	font-size: 24px;
-	width: 295px;
-	height: 33px;
-	margin: 35px 0;
+  font-size: 24px;
+  width: 295px;
+  height: 33px;
+  margin: 35px 0;
 }
-.tip {
-	height: 120px;
-	background-color: #FFFFFF;
-	position: relative;
+article ul li {
+  display: inline-block;
+  height: 240px;
+  width: 280px;
+  list-style-type: none;
+  margin: 0 20px 31px 0;
 }
-.tip p {
-	position: absolute;
-	top: 45px;
-	left: 431px;
-	font-size: 18px;
+.text_containner {
+  padding: 9px 0 0 9px;
+  background-color: white;
+  height: 120px;
+  color: #5A5A5A;
+  box-sizing: border-box;
 }
-.tip div {
-	width: 28px;
-	height: 28px;
-	font-size: 28px;
-	margin-right: 17px;
-	background-color: #FFCF15;
-	border-radius: 50%;
-	color: white;
-	position: absolute;
-	left: 386px;
-	top: 40px;
-	padding-left: 10px;
-	box-sizing: border-box;
+.text_containner span:first-child {
+  margin-right: 40px;
+}
+.text_containner img, .text_containner embed {
+  margin-right: 5px;
+  transform: translateY(5px);
+}
+.text_containner a {
+  text-decoration: none;
+  color: #5A5A5A;
+}
+.text_containner p:first-child {
+  font-size: 18px;
+  margin-bottom: 14px;
+}
+.text_containner p:nth-child(2), .text_containner p:nth-child(3) {
+  font-size: 14px;
+  margin-bottom: 13px;
+}
+.hot_activity {
+  display: none;
+}
+.nav-wrapper {
+  position: relative;
+  height: 40px;
+  margin-bottom: 31px;
+}
+.nav-wrapper div {
+  width: 300px;
+  position: absolute;
+  left: 36.5%;
+}
+.nav-wrapper a {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  color: #4EA1E7;
+  border: 0.6px solid #4EA1E7;
+  border-radius: 15%;
+  background-color: #FFFFFF;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 7px;
+  text-decoration: none;
+}
+.nav-wrapper a:nth-child(2) {
+  color: #FFFFFF;
+  background-color: #4EA1E7;
+}
+.nav-wrapper a:first-child, .nav-wrapper a:nth-child(3) {
+  margin-right: 30px;
+}
+.nav-wrapper a:nth-child(2) {
+  margin-right: 20px;
+}
+#before, #after {
+  width: 60px;
+  height: 40px;
+  background-color: #D1D1D1;
+  border: 0.6px solid #D1D1D1;
+  color: #FFFFFF;
+  border-radius: none;
 }

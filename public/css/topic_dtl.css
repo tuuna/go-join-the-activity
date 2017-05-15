@@ -1,0 +1,132 @@
+.banner {
+	height: 400px;
+}
+
+.banner img {
+	width: inherit;
+	height: 400px;
+}
+
+.topic_ctnt {
+	margin: 0 auto;
+	padding: 40px;
+	text-align: center;
+	background: #FFFFFF;
+	border: 1px solid #4EA1E7;
+}
+
+.topic_word {
+	font-family: PingFangSC-Regular;
+	font-size: 16px;
+	color: #4A4A4A;
+	margin: 8px 0;
+}
+
+.topic_word pre {
+	font-size: inherit;
+	background-color: #fff;
+	border: none;
+}
+
+.topic_actvt {
+	margin: 25px 0 0;
+}
+
+.topic_actvt p {
+	font-size: 18px;
+	color: #5A5A5A;
+}
+
+.topic_actvt_title {
+	font-family: PingFangSC-Medium;
+	font-size: 24px;
+	color: #4EA1E7;
+	margin: 20px 0 8px;
+}
+
+.topic_actvt img {
+	margin: 9px 0;
+	width: 840px;
+	height: 420px;
+}
+
+.icon {
+	height: 19px;
+	width: 19px;
+	display: inline-block;
+	position: relative;
+	margin-right: 7px;
+	top: 3px;
+	background-size: 100% 100%;
+}
+
+.time_icon {
+	height: 21px;
+	width: 21px;
+}
+
+.place_icon {
+	width: 15px;
+}
+
+.actvt_time,
+.actvt_place {
+	display: inline-block;
+	margin: 21px 0;
+}
+
+.actvt_time {
+	margin-right: 53px;
+}
+
+.actvt_people {
+	width: 100%;
+	margin-bottom: 18px;
+}
+
+.actvt_people p {
+	display: inline-block;
+	white-space: nowrap;
+	font-size: 18px;
+}
+
+.actvt_people p span {
+	margin-right: 9px;
+}
+
+.actvt_people .number {
+	margin: 0 22px;
+}
+
+.actvt_people .border_left {
+	border-left: 2px solid #4EA1E7;
+	position: relative;
+	left: 10px;
+}
+
+.check_star button {
+	height: 40px;
+	width: 110px;
+	display: inline-block;
+	font-size: 16px;
+	line-height: 40px;
+}
+
+.collection_icon {
+	margin-left: 25px;
+}
+
+.check {
+	margin-right: 10px;
+}
+
+.star {
+	margin-left: 10px;
+}
+
+@media (min-width:1250px) {
+	.max-all {
+		margin-top: 0;
+	}
+
+}

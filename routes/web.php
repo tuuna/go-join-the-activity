@@ -17,7 +17,7 @@ Auth::routes();
  * 首页
  */
 Route::get('/','IndexController@index');
-
+Route::get('/userLogout','IndexController@userLogout');
 /**
  * 个人中心
  */

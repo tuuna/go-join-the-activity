@@ -1,0 +1,28 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.mainbody{
+	width: 100vw;
+	height: 100vh;
+	background-image: url(../../img/loginbg.png);
+	background-size: 100% 100%;
+	position: relative;
+}
+
+.login{
+	width: 536px;
+	height: 500px;
+	margin: auto;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-image: url(../../img/loginbg2.png);
+}
+
+.account{
+	
+}

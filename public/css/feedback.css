@@ -1,0 +1,69 @@
+.banner {
+	height: 600px;
+	background-image: url(../../img/banner1.png);
+	background-size: 100% 100%;
+}
+
+.feedback_form {
+	height: 500px;
+	background-color: #fff;
+	text-align: center;
+	padding: 20px;
+}
+
+.title {
+	font-family: PingFangSC-Medium;
+	font-size: 24px;
+	color: #4EA1E7;
+	margin-bottom: 41px;
+}
+
+.feedback_form label {
+	width: 96px;
+	text-align: center;
+	font-family: PingFangSC-Regular;
+	font-size: 16px;
+	color: #9B9B9B;
+}
+
+.form_group{
+	display: inline-block;
+	float: left;
+}
+
+.form_group input{
+	width: 380px;
+	height: 50px;
+}
+
+.form_group input,
+.form_group_lg textarea {
+	background: #FFFFFF;
+	border: 1px solid #D1D1D1;
+	box-shadow: 0 1px 1px 0 #D1D1D1;
+}
+
+.left_margin{
+	margin-left: 108px;
+}
+
+.form_group_lg{
+	float: left;
+	margin-top: 50px;
+}
+
+.form_group_lg textarea{
+	width: 970px;
+	height: 120px;
+	resize: none;
+}
+
+.form_group_lg label{
+    float: left;
+}
+
+.submit_feedback{
+	width: 180px;
+	height: 50px;
+	margin-top: 53px;
+}
