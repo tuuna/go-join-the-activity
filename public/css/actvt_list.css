@@ -23,7 +23,7 @@
 	nav div:first-child{
 		padding-left:20px;
 		float:left;
-		background-image: url(../../img/logo.png);
+		background-image: url(/img/logo.png);
 		background-repeat: no-repeat;
 		background-position:left center;
 	}
@@ -38,8 +38,9 @@
 		color: white;
 	}
 	#banner{
-		height:600px;
-		background-image: url(../../img/banner.png);
+		height: 300px;
+		background-image: url(/img/banner.png);
+		background-size: 100% 100%;
 	}
 	article>div{
 		max-width:1220px;
