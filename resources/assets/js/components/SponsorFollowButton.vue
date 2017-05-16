@@ -1,5 +1,5 @@
 <template>
-    <button  class="guanzhu buttonblue" v-bind:class="{'btn-success':followed}" v-text="text" v-on:click="follow"></button>
+    <button  class="btn-blue focus" v-bind:class="{'btn-warning':followed}" v-text="text" v-on:click="follow"></button>
 </template>
 
 <script>

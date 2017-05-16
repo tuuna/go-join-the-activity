@@ -13,15 +13,16 @@
                 <h3 class="sponsor_title">{{ $sponsorInfo['sponsor_name'] }}</h3>
                 <div class="sponsor_a">
                     @if($sponsorInfo['count'])
-                        <span class="span_border"><a href="#">{{ $sponsorInfo['count'] }}</a>活动</span>
+                        <span class="span_border">{{ $sponsorInfo['count'] }}活动</span>
                     @else
-                        <b class="span_border"><a href="#">{{ $sponsorInfo['count'] }}</a>活动</b>
+                        <span class="span_border">{{ $sponsorInfo['count'] }}活动</span>
                     @endif
-                    <b><a href="#">{{ $sponsorInfo['follow_count'] }}</a>粉丝</b>
+                    <span>{{ $sponsorInfo['follow_count'] }}粉丝</span>
                 </div>
                 <div class="focus_share">
-                    <button class="btn-blue focus" id="focus">关注</button>
-                    <button class="btn-white unfocus" id="unfocus">已关注</button>
+                    <sponsor-follow-button sponsor="{{ $sponsorInfo['id'] }}"></sponsor-follow-button>
+                    {{--<button class="btn-blue focus" id="focus">关注</button>--}}
+                    {{--<button class="btn-white unfocus" id="unfocus">已关注</button>--}}
                     <button class="btn-white share">分享</button>
                 </div>
                 <p class="sponsor_intro">{{ $sponsorInfo['description'] }}</p>
@@ -52,7 +53,7 @@
                             <p class="border_left"><span class="icon collection_icon"></span>收藏人数：{{ $info['follow_count'] }}<span class="number"></span></p>
                         </div>
                         <div class="check_star">
-                            <button class="btn-blue check">关注</button>
+                            <activity-follow-button activity="{{ $info['id'] }}"></activity-follow-button>
                             <button class="btn-white star">分享</button>
                         </div>
                     </div>

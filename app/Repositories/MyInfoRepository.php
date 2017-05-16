@@ -17,6 +17,6 @@ class MyInfoRepository
     public function getMyInfo()
     {
         return User::find(Auth::user()->id)
-                        ->first(['id','name','pic']);
+                        ->first(['id','name','pic','signature','nickname','email']);
     }
 }

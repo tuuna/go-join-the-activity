@@ -23,7 +23,7 @@
                 <p class="signup-p signup-number"><embed src="{{ asset('img/sponsoricon.svg') }}" />{{ $activityDetail['contain_count'] }}人</p>
                 <p class="signup-p signup-sponsor"><embed src="{{ asset('img/sponsoricon.svg') }}" />{{ $activityDetail['main_sponsor']['sponsor_name'] }}主办</p>
                 <button class="btn-blue" id="sign-up">我要报名</button>
-                <div id="app" class="btn-white pull-right">
+                <div id="app" style="float: left;">
                     <activity-follow-button activity="{{ $activityDetail['id'] }}"></activity-follow-button>
                 </div>
 

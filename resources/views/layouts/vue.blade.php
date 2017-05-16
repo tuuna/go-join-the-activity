@@ -25,47 +25,45 @@
 <body>
 <!-- 导航 -->
 <div id="app">
-<header>
-
-    <nav class="navigation">
-        <div>
-            <label for="search">信大活动</label>
-            <input type="search" name="search">
-        </div>
-        <div>
-            <ul class="nav navbar-nav navbar-right">
-                @if(Auth::guest())
+    <header>
+        @if(Auth::guest())
+            <nav class="navigation">
+                <div>
+                    <label for="search">信大活动</label>
+                    <input type="search" name="search">
+                </div>
+                <div>
                     <a href="{{ url('/login') }}" class="navli">登陆/注册</a>
-                @else
-                    <a href="{{ url('/myinfo') }}" class="navli">个人中心</a>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="color: #F0F0F0;">
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-
-                        <ul class="dropdown-menu" role="menu">
-                            <li>
-                                <a href="{{ url('/logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    退出
-                                </a>
-
-                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-                            </li>
+                    <a href="{{ url('/admin') }}" class="navli">发布活动</a>
+                    <a href="{{ url('/sponsorlist') }}" class="navli">主办方</a>
+                </div>
+            </nav>
+        @else
+            <nav class="navigation">
+                <div>
+                    <label for="search">信大活动</label>
+                    <input type="search" name="search">
+                </div>
+                <div>
+                    <a href="{{ url('/login') }}" class="navli" style="display: none;">登陆/注册</a>
+                    <div class="dropdown">
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <img src="{{asset('img/yyxxzz.png')}}" alt="#">
+                            <span class="nickname">{{ Auth::user()->name }}</span>
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="{{ url('/myinfo') }}">个人中心</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="{{ url('/userLogout') }}">退出</a></li>
                         </ul>
-                    </li>
-                @endif
-            </ul>
-
-
-            <a href="{{ url('/admin') }}" class="navli">发布活动</a>
-            <a href="{{ url('/sponsorlist') }}" class="navli">主办方</a>
-        </div>
-    </nav>
-</header>
+                    </div>
+                    <a href="{{ url('/admin') }}" class="navli">发布活动</a>
+                    <a href="{{ url('/sponsorlist') }}" class="navli">主办方</a>
+                </div>
+            </nav>
+        @endif
+    </header>
 
 @yield('content')
 

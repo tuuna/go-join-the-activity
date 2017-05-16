@@ -19,7 +19,7 @@
                 <img src="{{ $myInfo->pic }}" alt="头像" class="avatar">
 
                 <p class="my-id">{{ $myInfo->name }}</p>
-                <p class="my-autograph">Where do we go now?</p>
+                <p class="my-autograph">{{ $myInfo->signature }}</p>
                 <button class="set-myinfo">账户资料设置</button>
             </div>
             <div class="my-tabbar">
@@ -54,160 +54,6 @@
                         <div class="info-msg">
 
                             <p><img src="img/addressicon.svg" />明德楼门口</p>
-
-                        </div>
-                        <div class="info-msg">
-
-                            <p><img src="img/sponsoricon.svg" />多火工作室</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="activity-item">
-                    <a href="#!" class="top-img">
-                        <img src="img/Group2.png" alt="huodong">
-                    </a>
-                    <div class="bottom-info">
-                        <a href="#!" class="info-title">南信大最炫千人城市夜跑活动</a>
-                        <div class="info-msg">
-
-                            <p> <img src="img/calendaricon.svg" />2016-11-22(二) 09:30~12:30</p>
-
-                        </div>
-                        <div class="info-msg">
-
-                            <p> <img src="img/addressicon.svg" />明德楼门口</p>
-
-                        </div>
-                        <div class="info-msg">
-
-                            <p><img src="img/sponsoricon.svg" />多火工作室</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="activity-item">
-                    <a href="#!" class="top-img">
-                        <img src="img/Group3.png" alt="huodong">
-                    </a>
-                    <div class="bottom-info">
-                        <a href="#!" class="info-title">南信大最炫千人城市夜跑活动</a>
-                        <div class="info-msg">
-
-                            <p> <img src="img/calendaricon.svg" />2016-11-22(二) 09:30~12:30</p>
-
-                        </div>
-                        <div class="info-msg">
-
-                            <p> <img src="img/addressicon.svg" />明德楼门口</p>
-
-                        </div>
-                        <div class="info-msg">
-
-                            <p><img src="img/sponsoricon.svg" />多火工作室</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="activity-item">
-                    <a href="#!" class="top-img">
-                        <img src="img/Group4.png" alt="huodong">
-                    </a>
-                    <div class="bottom-info">
-                        <a href="#!" class="info-title">南信大最炫千人城市夜跑活动</a>
-                        <div class="info-msg">
-
-                            <p> <img src="img/calendaricon.svg" />2016-11-22(二) 09:30~12:30</p>
-
-                        </div>
-                        <div class="info-msg">
-
-                            <p> <img src="img/addressicon.svg" />明德楼门口</p>
-
-                        </div>
-                        <div class="info-msg">
-
-                            <p><img src="img/sponsoricon.svg" />多火工作室</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="activity-item">
-                    <a href="#!" class="top-img">
-                        <img src="img/Group.png" alt="huodong">
-                    </a>
-                    <div class="bottom-info">
-                        <a href="#!" class="info-title">南信大最炫千人城市夜跑活动</a>
-                        <div class="info-msg">
-
-                            <p> <img src="img/calendaricon.svg" />2016-11-22(二) 09:30~12:30</p>
-
-                        </div>
-                        <div class="info-msg">
-
-                            <p><img src="img/addressicon.svg" />明德楼门口</p>
-
-                        </div>
-                        <div class="info-msg">
-
-                            <p><img src="img/sponsoricon.svg" />多火工作室</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="activity-item">
-                    <a href="#!" class="top-img">
-                        <img src="img/Group2.png" alt="huodong">
-                    </a>
-                    <div class="bottom-info">
-                        <a href="#!" class="info-title">南信大最炫千人城市夜跑活动</a>
-                        <div class="info-msg">
-
-                            <p> <img src="img/calendaricon.svg" />2016-11-22(二) 09:30~12:30</p>
-
-                        </div>
-                        <div class="info-msg">
-
-                            <p> <img src="img/addressicon.svg" />明德楼门口</p>
-
-                        </div>
-                        <div class="info-msg">
-
-                            <p><img src="img/sponsoricon.svg" />多火工作室</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="activity-item">
-                    <a href="#!" class="top-img">
-                        <img src="img/Group3.png" alt="huodong">
-                    </a>
-                    <div class="bottom-info">
-                        <a href="#!" class="info-title">南信大最炫千人城市夜跑活动</a>
-                        <div class="info-msg">
-
-                            <p> <img src="img/calendaricon.svg" />2016-11-22(二) 09:30~12:30</p>
-
-                        </div>
-                        <div class="info-msg">
-
-                            <p> <img src="img/addressicon.svg" />明德楼门口</p>
-
-                        </div>
-                        <div class="info-msg">
-
-                            <p><img src="img/sponsoricon.svg" />多火工作室</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="activity-item">
-                    <a href="#!" class="top-img">
-                        <img src="img/Group4.png" alt="huodong">
-                    </a>
-                    <div class="bottom-info">
-                        <a href="#!" class="info-title">南信大最炫千人城市夜跑活动</a>
-                        <div class="info-msg">
-
-                            <p> <img src="img/calendaricon.svg" />2016-11-22(二) 09:30~12:30</p>
-
-                        </div>
-                        <div class="info-msg">
-
-                            <p> <img src="img/addressicon.svg" />明德楼门口</p>
 
                         </div>
                         <div class="info-msg">
@@ -366,15 +212,15 @@
         </div>
         <div class="form_group">
             <label for="nickname">昵称</label>
-            <input type="text">
+            <input type="text" name="nickname">
         </div>
         <div class="form_group">
             <label for="email">邮箱</label>
-            <input type="text">
+            <input type="text" name="email">
         </div>
         <div class="form_group">
-            <label for="motto">签名</label>
-            <input type="text">
+            <label for="signature">签名</label>
+            <input type="text" name="signature">
         </div>
         <div class="form_group security">
             <label for="security">安全验证</label>

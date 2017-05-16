@@ -1,5 +1,5 @@
 <template>
-    <button  class="btn-white" v-bind:class="{'btn-success':followed}" v-text="text" v-on:click="follow"></button>
+    <button  class="btn-blue check" v-bind:class="{'btn-warning':followed}" v-text="text" v-on:click="follow"></button>
 </template>
 
 <script>
