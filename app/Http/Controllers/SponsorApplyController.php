@@ -37,8 +37,6 @@ class SponsorApplyController extends Controller
                  'user_id' => Auth::id(),
                 'website' => !is_null($request->get('website')) ? $request->get('website') : '',
             ]);
-
-//            $this->mail->applyInfo($request->get('contact_email'));
             flash('申请成功，请等待审核。我们绝对为您的个人资料保密。','success');
             return redirect('/myinfo');
         } else {

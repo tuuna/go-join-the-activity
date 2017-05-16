@@ -206,8 +206,9 @@
                 <p>上传的头像会自动生成头像缩略图，您也可以拖动大图的裁减区域，调整缩图内容。<br />
                     支持JPG、GIF、PNG等图片格式<br/>
                     推荐尺寸：160*160像素</p>
-                <button class="btn-white upload">上传头像</button>
-                <button class="btn-blue">保存</button>
+                <input  name="user_icon" type="file" class="btn-white upload">
+                {{--<button class="btn-white upload">上传头像</button>
+                <button class="btn-blue">保存</button>--}}
             </div>
         </div>
         <div class="form_group">
