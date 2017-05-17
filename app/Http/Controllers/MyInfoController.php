@@ -28,5 +28,13 @@ class MyInfoController extends Controller
         return view('myInfo.index',compact('myInfo'));
     }
 
+    public function updateInfo(Request $request)
+    {
+        $this->myInfo->updateMyInfo($request,'user_icon') ?
+            flash('修改资料成功','success'):
+            flash('修改资料失败，请重试','warning');
+        return back();
+    }
+
 
 }

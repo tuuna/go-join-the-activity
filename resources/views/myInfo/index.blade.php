@@ -215,19 +215,19 @@
             <label for="nickname">昵称</label>
             <input type="text" name="nickname">
         </div>
-        <div class="form_group">
+{{--        <div class="form_group">
             <label for="email">邮箱</label>
             <input type="text" name="email">
-        </div>
+        </div>--}}
         <div class="form_group">
             <label for="signature">签名</label>
             <input type="text" name="signature">
         </div>
-        <div class="form_group security">
+{{--        <div class="form_group security">
             <label for="security">安全验证</label>
             <img src="../../img/验证码.png" alt="#">
             <input type="text">
-        </div>
+        </div>--}}
         <button class="btn-blue setting_submit" id="setting-submit">确认修改</button>
     </div>
 
